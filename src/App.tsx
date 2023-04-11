@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { AppContainer } from './style';
+
+interface Infos {
+  name: string;
+  age: number;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [infos, setInfos] = useState<Infos | null>(null);
+
+  const name: string = 'Davi'
+
+  const Name = completeName('Ricardo', 23)
+
+  function completeName(name: string, age: number) {
+    return <h1>Meu nome é {name} e tenho {age} anos</h1>
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <AppContainer>
+      <h1>React.js + Typescript + Redux</h1>
+      {Name}
+    </AppContainer>
   )
 }
 
-export default App
+export default App;
