@@ -1,4 +1,5 @@
-import { BoxName, Container } from './style';
+import { BoxName, Container, Cart } from './style';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 import LOGO from '../../assets/logo-dark.png';
 
 const Header = () => {
@@ -9,6 +10,10 @@ const Header = () => {
     <Container>
       <BoxName>{name}</BoxName>
       <img src={LOGO}/>
+      <Cart>
+        <div className="haveItems"/>
+        <MdOutlineShoppingCart/>
+      </Cart>
     </Container>
   );
 };
