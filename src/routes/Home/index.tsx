@@ -1,6 +1,7 @@
 import { Header } from '../../components';
-import { Container, Search } from './style';
-import { MdSearch } from 'react-icons/md';
+import Lists from '../../components/Lists';
+import { AddButton, Container, Search, WelcomeHeader } from './style';
+import { MdSearch, MdAdd } from 'react-icons/md';
 
 
 const Home = () => {
@@ -11,14 +12,24 @@ const Home = () => {
     <>
       <Header name={name}/>
       <Container>
-        <div className="texts">
-          <h1>Olá {name},</h1>
-          <p>boas compras.</p>
-        </div>
-        <Search>
-          <MdSearch/>
-        </Search>
+        <WelcomeHeader>
+          <div className="texts">
+            <h1>Olá {name},</h1>
+            <p>boas compras.</p>
+          </div>
+          <Search>
+            <MdSearch/>
+          </Search>
+        </WelcomeHeader>
+
+        <Lists/>
       </Container>
+
+      <AddButton>
+        <div>
+          <MdAdd/>
+        </div>
+      </AddButton>
     </>
   );
 };

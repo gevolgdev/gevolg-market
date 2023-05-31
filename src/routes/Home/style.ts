@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+  padding: 1rem 1.5rem;
+  overflow-y: hidden;
+`;
+
+export const WelcomeHeader = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
 
   .texts {
     h1, p {
@@ -28,5 +32,31 @@ export const Search = styled.div`
 
   svg {
     font-size: 1.5rem;
+  }
+`;
+
+export const AddButton = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 2rem;
+  left: 0;
+
+  div {
+    width: 60px;
+    height: 60px;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #9B7BFF;
+    border-radius: 100px;
+    border: none;
+  
+    svg {
+      font-size: 1.5rem;
+      color: white;
+    }
   }
 `;
