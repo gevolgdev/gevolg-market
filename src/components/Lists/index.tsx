@@ -6,9 +6,9 @@ import { HiOutlineMinus } from 'react-icons/hi';
 const Lists = () => {
 
   const list: ListProps[] = [
-    { priority: 'media', title: 'Lista do mês', date: '31/05' },
-    { priority: 'alta', title: 'Lista de doces', date: '01/06' },
-    { priority: 'baixa', title: 'Lista de rolê', date: '30/05' },
+    { id: 1, priority: 'media', title: 'Lista do mês', date: '31/05' },
+    { id: 2, priority: 'alta', title: 'Lista de doces', date: '01/06' },
+    { id: 3, priority: 'baixa', title: 'Lista de rolê', date: '30/05' },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Lists = () => {
               <span className="list-full">Listas de compras</span>
               <Content>
                 {list.map(item => (
-                  <ListCard>
+                  <ListCard key={item.id}>
                     <div className="header">
                       <span>{item.priority}</span>
                       <MdArrowOutward/>
