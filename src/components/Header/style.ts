@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   display: flex;
   justify-content: space-between;
 `;
