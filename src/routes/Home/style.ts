@@ -53,6 +53,7 @@ export const AddButton = styled.div`
     background: #9B7BFF;
     border-radius: 100px;
     border: none;
+    cursor: pointer;
   
     svg {
       font-size: 1.5rem;

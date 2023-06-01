@@ -1,15 +1,21 @@
-import { Header } from '../../components';
+import { useState } from 'react';
+import { AddList, Header } from '../../components';
 import Lists from '../../components/Lists';
 import { AddButton, Container, Search, WelcomeHeader } from './style';
 import { MdSearch, MdAdd } from 'react-icons/md';
 
 
-const Home = () => {
+const Home = (): JSX.Element => {
 
-  const name: string = 'Pinelli';
+  const [showAddList, setShowAddList] = useState<boolean>(false);
+
+  const name: string = 'Ricardo';
+
+  const handleAddList = () => setShowAddList(true);
 
   return (
     <>
+      {showAddList && <AddList setShowAddList={setShowAddList}/>}
       <Header name={name}/>
       <Container>
         <WelcomeHeader>
@@ -25,7 +31,7 @@ const Home = () => {
         <Lists/>
       </Container>
 
-      <AddButton>
+      <AddButton onClick={handleAddList}>
         <div>
           <MdAdd/>
         </div>
