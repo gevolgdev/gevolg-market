@@ -1,26 +1,24 @@
 import { ListProps } from "../../types/types";
+import { useSelector } from 'react-redux';
 import { Container, ListCard, Content } from "./style";
 import { MdArrowOutward } from 'react-icons/md';
 import { HiOutlineMinus } from 'react-icons/hi';
+import { RootState } from "../../lib/redux/reducer";
 
 const Lists = (): JSX.Element => {
 
-  const list: ListProps[] = [
-    { id: 1, priority: 'media', title: 'Lista do mês', date: '31/05' },
-    { id: 2, priority: 'alta', title: 'Lista de doces', date: '01/06' },
-    { id: 3, priority: 'baixa', title: 'Lista de rolê', date: '30/05' },
-  ];
+  const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
 
   return (
     <>
       <Container>
         { 
-          list.length === 0
+          lists.length === 0
           ? <span className="list-empty">Crie uma lista de compras</span>
           : <>
               <span className="list-full">Listas de compras</span>
               <Content>
-                {list.map(item => (
+                {lists.map(item => (
                   <ListCard key={item.id}>
                     <div className="header">
                       <span>{item.priority}</span>

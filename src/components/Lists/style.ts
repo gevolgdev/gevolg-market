@@ -13,23 +13,24 @@ export const Container = styled.div`
     font-weight: 300;
     margin: 6rem auto 0;
   }
-  .list-full {color: #7e7e7e;}
+  .list-full {color: #7e7e7e; padding-left: 1.5rem}
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   gap: 20px;
   overflow-y: auto;
 `;
 
 export const ListCard = styled.div`
-  width: 200px;
-  height: 250px;
+  width: 220px;
+  height: 270px;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  justify-content: space-between;
+  padding: 1.5rem;
   flex-shrink: 0;
   border-radius: 25px;
   background: #9B7BFF;
@@ -53,9 +54,8 @@ export const ListCard = styled.div`
       font-size: 1.5rem;
     }
   }
-
   h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: white;
     margin-top: auto;
   }
