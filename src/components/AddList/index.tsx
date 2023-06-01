@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addLists } from '../../lib/redux/lists/listsSlice';
 import { SetStateAction } from "react";
 import { GrFormClose } from 'react-icons/gr';
 import { Button, Container } from "./style";
@@ -14,17 +16,19 @@ interface ShowProps {
 const AddList: React.FC<ShowProps> = ({setShowAddList}) => {
 
   const INITIAL_VALUE: ListProps = { priority: '', title: '', date: '' };
-  const [list, setList] = useState<ListProps>(INITIAL_VALUE);
+  const [newList, setNewList] = useState<ListProps>(INITIAL_VALUE);
+  const dispatch = useDispatch();
 
   const closeAddList = () => setShowAddList(false);
 
   const handleSaveLists = (event: EventProps) => {
     const { id, value } = event.target;
-    setList(prev => ({...prev, [id]: value}));
+    setNewList(prev => ({...prev, [id]: value}));
   };
 
   const isAddList = (): void => {
-    console.table(list);
+    dispatch(addLists(newList));
+    closeAddList();
   };
 
   return (
@@ -40,7 +44,7 @@ const AddList: React.FC<ShowProps> = ({setShowAddList}) => {
         <div className="inputs">
           <div>
             <label>Nome da lista</label>
-            <input onChange={handleSaveLists} id='title' type='text' placeholder=""/>
+            <input onChange={handleSaveLists} id='title' type='text' maxLength={25}/>
           </div>
           <div>
             <label>Prioridade</label>
