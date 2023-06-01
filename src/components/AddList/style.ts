@@ -31,6 +31,7 @@ export const Container = styled.div`
         display: flex;
         background: transparent;
         border: none;
+        cursor: pointer;
       }
     }
 
@@ -74,4 +75,5 @@ export const Button = styled.button`
   background: #51FFB0;
   border: none;
   padding: 0.9rem;
+  cursor: pointer;
 `;

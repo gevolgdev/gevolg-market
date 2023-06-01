@@ -1,42 +1,17 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addLists } from '../../lib/redux/lists/listsSlice';
-import { SetStateAction } from "react";
 import { GrFormClose } from 'react-icons/gr';
 import { Button, Container } from "./style";
-import { ListProps } from '../../types/types';
+import useLists from "../../hooks/useLists";
 
-type setShowInputsFunction = React.Dispatch<SetStateAction<boolean>>;
-type EventProps = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
+const AddList = () => {
 
-interface ShowProps {
-  setShowAddList: setShowInputsFunction;
-};
-
-const AddList: React.FC<ShowProps> = ({setShowAddList}) => {
-
-  const INITIAL_VALUE: ListProps = { priority: '', title: '', date: '' };
-  const [newList, setNewList] = useState<ListProps>(INITIAL_VALUE);
-  const dispatch = useDispatch();
-
-  const closeAddList = () => setShowAddList(false);
-
-  const handleSaveLists = (event: EventProps) => {
-    const { id, value } = event.target;
-    setNewList(prev => ({...prev, [id]: value}));
-  };
-
-  const isAddList = (): void => {
-    dispatch(addLists(newList));
-    closeAddList();
-  };
+  const { handleSaveLists, isAddList, closeModal } = useLists();
 
   return (
     <Container>
       <div className="content">
         <div className="header">
           <span>Nova lista</span>
-          <button onClick={closeAddList}>
+          <button onClick={closeModal}>
             <GrFormClose/>
           </button>
         </div>
