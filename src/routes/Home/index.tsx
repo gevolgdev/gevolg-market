@@ -1,21 +1,23 @@
-import { useState } from 'react';
 import { AddList, Header } from '../../components';
 import Lists from '../../components/Lists';
 import { AddButton, Container, Search, WelcomeHeader } from './style';
+import { useSelector } from 'react-redux';
 import { MdSearch, MdAdd } from 'react-icons/md';
+import useLists from '../../hooks/useLists';
+import { SelectShowModal, showModal } from '../../lib/redux/slices/showModalSlice';
+import { RootState } from '../../lib/redux/reducer';
 
 
 const Home = (): JSX.Element => {
 
-  const [showAddList, setShowAddList] = useState<boolean>(false);
-
+  const { openModal } = useLists();
+  const showModalList = useSelector((state: RootState) => state.showModalSlice);
+  
   const name: string = 'Ricardo';
-
-  const handleAddList = () => setShowAddList(true);
 
   return (
     <>
-      {showAddList && <AddList setShowAddList={setShowAddList}/>}
+      {showModalList.active && <AddList/>}
       <Header name={name}/>
       <Container>
         <WelcomeHeader>
@@ -31,7 +33,7 @@ const Home = (): JSX.Element => {
         <Lists/>
       </Container>
 
-      <AddButton onClick={handleAddList}>
+      <AddButton onClick={openModal}>
         <div>
           <MdAdd/>
         </div>
