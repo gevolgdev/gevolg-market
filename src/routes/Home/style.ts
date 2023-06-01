@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
   overflow-y: hidden;
 `;
 
@@ -11,6 +11,7 @@ export const WelcomeHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.5rem;
 
   .texts {
     h1, p {
