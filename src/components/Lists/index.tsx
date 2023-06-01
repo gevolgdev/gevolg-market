@@ -3,7 +3,7 @@ import { Container, ListCard, Content } from "./style";
 import { MdArrowOutward } from 'react-icons/md';
 import { HiOutlineMinus } from 'react-icons/hi';
 
-const Lists = () => {
+const Lists = (): JSX.Element => {
 
   const list: ListProps[] = [
     { id: 1, priority: 'media', title: 'Lista do mês', date: '31/05' },
