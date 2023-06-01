@@ -1,5 +1,5 @@
 export interface ListProps {
-  id: number,
+  id?: number,
   priority: string;
   title: string;
   date: string;
