@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ColorProps {
+  color: string;
+};
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +28,7 @@ export const Content = styled.div`
   overflow-y: auto;
 `;
 
-export const ListCard = styled.div`
+export const ListCard = styled.div<ColorProps>`
   width: 220px;
   height: 270px;
   display: flex;
@@ -33,7 +37,7 @@ export const ListCard = styled.div`
   padding: 1.5rem;
   flex-shrink: 0;
   border-radius: 25px;
-  background: #9B7BFF;
+  background: ${props => props.color ? `${props.color}` : '#9B7BFF'};
   filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   
   .header {
@@ -43,7 +47,7 @@ export const ListCard = styled.div`
     justify-content: space-between;
     
     span {
-      color: #9B7BFF;
+      color: ${props => props.color ? `${props.color}` : '#9B7BFF'};
       font-size: 0.9rem;
       padding: 5px 10px;
       border-radius: 100px;
