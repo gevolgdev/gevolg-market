@@ -6,7 +6,7 @@ import { RootState } from '../reducer';
 const initialState: ListProps[] = [{
   title: '',
   priority: '',
-  date: '',
+  color: '',
 }];
 
 const listSlice = createSlice({
@@ -18,7 +18,7 @@ const listSlice = createSlice({
       const newList: ListProps = {
         title: payload.title,
         priority: payload.priority,
-        date: payload.date,
+        color: payload.color,
       }
 
       return [...state, newList];

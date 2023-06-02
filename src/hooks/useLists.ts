@@ -8,7 +8,7 @@ type EventProps = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
 const useLists = () => {
 
-  const INITIAL_VALUE: ListProps = { priority: '', title: '', date: '' };
+  const INITIAL_VALUE: ListProps = { priority: '', title: '', color: '' };
   const [newList, setNewList] = useState<ListProps>(INITIAL_VALUE);
   const dispatch = useDispatch();
 
