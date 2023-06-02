@@ -18,6 +18,10 @@ export const Container = styled.div`
     justify-content: space-between;
     border-radius: 25px;
     background: white;
+    @media (min-width: 800px){
+      width: 500px;
+      margin: 0 auto;
+    }
 
     .header {
       width: 100%;
