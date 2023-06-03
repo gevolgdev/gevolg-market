@@ -14,15 +14,14 @@ const listSlice = createSlice({
   initialState,
   reducers: {
     addLists: (state, { payload }: PayloadAction<ListProps>): ListProps[] => {
-
       const newList: ListProps = {
         title: payload.title,
         priority: payload.priority,
         color: payload.color,
       }
-
+      
       return [...state, newList];
-    },
+    }
   }
 });
 
