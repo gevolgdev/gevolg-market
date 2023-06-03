@@ -1,14 +1,11 @@
 import { ListProps } from "../../types/types";
 import { useSelector } from 'react-redux';
-import { Container, ListCard, Content } from "./style";
-import { MdArrowOutward } from 'react-icons/md';
-import { HiOutlineMinus } from 'react-icons/hi';
+import { Container, Content } from "./style";
 import { RootState } from "../../lib/redux/reducer";
-import useLists from "../../hooks/useLists";
+import ListCard from "../ListCard";
 
-const Lists = (): JSX.Element => {
+const Lists = () => {
 
-  const currentDate: string = new Date().toLocaleDateString();
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
 
   return (
@@ -21,14 +18,7 @@ const Lists = (): JSX.Element => {
               <span className="list-full">Listas de compras</span>
               <Content>
                 {lists.map((item, index) => (
-                  <ListCard key={index} color={item.color}>
-                    <div className="header">
-                      <span>{item.priority}</span>
-                      <MdArrowOutward/>
-                    </div>
-                    <h2>{item.title}</h2>
-                    <p><HiOutlineMinus/> {currentDate}</p>
-                  </ListCard>
+                  <ListCard {...item} key={index}/>
                 ))}
               </Content>
             </>
