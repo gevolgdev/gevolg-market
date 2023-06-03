@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 
+interface SearchProps {
+  toCenterDiv: boolean;
+};
+
 export const Container = styled.section`
   padding: 1rem 0;
   overflow-y: hidden;
 `;
 
-export const WelcomeHeader = styled.div`
+export const WelcomeHeader = styled.div<SearchProps>`
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${props => props.toCenterDiv ? 'center' : 'space-between'};
   padding: 0 1.5rem;
 
   .texts {
@@ -23,16 +27,33 @@ export const WelcomeHeader = styled.div`
 `;
 
 export const Search = styled.div`
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: .8rem;
   border-radius: 7px;
+  border: none;
   background: #D7CAFF;
+  cursor: pointer;
 
   svg {
     font-size: 1.5rem;
+  }
+  input {
+    font-family: 'Inter Tight';
+    font-size: 1rem;
+    padding: .5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    opacity: 70%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 `;
 
