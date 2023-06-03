@@ -4,3 +4,5 @@ export interface ListProps {
   title: string;
   color: string;
 };  
+
+export type EventProps = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
