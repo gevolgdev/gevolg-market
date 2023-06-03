@@ -10,6 +10,6 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  max-width: 500px;
+  max-width: 1128px;
   margin: 0 auto;
 `;
