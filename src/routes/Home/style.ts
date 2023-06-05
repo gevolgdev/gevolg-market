@@ -83,3 +83,11 @@ export const AddButton = styled.div`
     }
   }
 `;
+
+export const SearchResults = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 3rem 1.5rem 0;
+  gap: 20px;
+  overflow-y: auto;
+`;
