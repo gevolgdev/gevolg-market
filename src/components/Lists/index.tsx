@@ -19,7 +19,7 @@ const Lists = () => {
               <Content>
                 {lists.map((item, index) => (
                   <ListCard {...item} key={index}/>
-                ))}
+                )).reverse()}
               </Content>
             </>
         }
