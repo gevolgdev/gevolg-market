@@ -35,9 +35,9 @@ const AddList = () => {
             <label>Cor</label>
             <select onChange={handleSaveLists} id='color' defaultValue='--'>
               <option value='--'>Padrão</option>
-              <option value='#172554'>Azul</option>
-              <option value='#064e3b'>Verde</option>
-              <option value='#9d174d'>Rosa</option>
+              <option value='#1e40af'>Azul</option>
+              <option value='#15803d'>Verde</option>
+              <option value='#c026d3'>Rosa</option>
             </select>
           </div>
         </div>
