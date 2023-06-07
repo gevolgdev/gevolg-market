@@ -14,7 +14,7 @@ export const WelcomeHeader = styled.div<SearchProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: ${props => props.toCenterDiv ? 'center' : 'space-between'};
+  justify-content: ${({toCenterDiv}) => toCenterDiv ? 'center' : 'space-between'};
   padding: 0 1.5rem;
 
   .texts {
@@ -90,4 +90,8 @@ export const SearchResults = styled.div`
   padding: 3rem 1.5rem 0;
   gap: 20px;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
