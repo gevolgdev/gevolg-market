@@ -18,7 +18,7 @@ const BodyList: React.FC = () => {
       Detalhes da lista de compras: {id}
       <span>{}</span>
     </div>
-  )
-}
+  );
+};
 
-export default BodyList
+export default BodyList;
