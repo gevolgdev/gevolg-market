@@ -22,4 +22,8 @@ export const Content = styled.div`
   padding: 1rem 1.5rem;
   gap: 20px;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
