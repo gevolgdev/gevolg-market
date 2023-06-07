@@ -4,7 +4,7 @@ import IMAGE_BG from '../../assets/background-initial.png';
 import LOGO from '../../assets/logo-dark.png';
 
 
-const Initial = () => {
+const Initial: React.FC = () => {
 
   return (
     <>

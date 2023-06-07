@@ -24,7 +24,7 @@ const systemSearch = () => {
     if(item.title.toLocaleLowerCase().includes(keywordSearch.toLocaleLowerCase())) return item.title;
   });
   
-  return { searching, handleSearch, changeSearch, resultSearch };
+  return { searching, resultSearch, handleSearch, changeSearch };
 };
 
 export default systemSearch;
