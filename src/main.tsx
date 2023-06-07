@@ -7,6 +7,7 @@ import { createBrowserRouter } from 'react-router-dom';
 // Redux
 import { Provider } from 'react-redux';
 import store from './lib/redux/store';
+import BodyList from './components/BodyList';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/initial',
         element: <Initial/>,
+      },
+      {
+        path: '/listas/:id',
+        element: <BodyList/>,
       },
     ]
   }
