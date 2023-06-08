@@ -21,7 +21,7 @@ const systemSearch = () => {
 
   let resultSearch: ListProps[] = lists.filter((item: ListProps) => {
     if(keywordSearch === '') return;
-    if(item.title.toLocaleLowerCase().includes(keywordSearch.toLocaleLowerCase())) return item.title;
+    if(item.title.toLocaleLowerCase().includes(keywordSearch.toLocaleLowerCase())) return item;
   });
   
   return { searching, resultSearch, handleSearch, changeSearch };
