@@ -28,10 +28,14 @@ const useLists = () => {
   };
   
   const openList = (index: number) => {
-    const currentDataPage = lists[index];
+    const currentDataPage: ListProps = lists[index];
+
+    const indexInsert = {index: index};
+    const newCurrentPage = Object.assign(indexInsert, currentDataPage);
+
     const currentTitlePage = currentDataPage.title;
     const path: string = currentTitlePage.split(' ').join('-');
-    navigate(`/listas/${path}`, { state: { currentDataPage } });
+    navigate(`/listas/${path}`, { state: { newCurrentPage } });
   };
 
   return { openModal, closeModal, handleSaveLists, isAddList, openList };
