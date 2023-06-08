@@ -21,11 +21,18 @@ const listSlice = createSlice({
       }
       
       return [...state, newList];
+    },
+    removeList: (state, { payload }: PayloadAction<number>): ListProps[] => {
+      let newList: ListProps[] = [...state];
+      newList.splice(payload, 1);
+
+      return newList;
     }
   }
 });
 
 export default listSlice.reducer;
 export const { addLists } = listSlice.actions;
+export const { removeList } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
