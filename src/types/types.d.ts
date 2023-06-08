@@ -1,4 +1,5 @@
 export interface ListProps {
+  index?: number;
   id?: number,
   priority: string;
   title: string;
