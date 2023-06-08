@@ -30,8 +30,8 @@ const Home: React.FC = () => {
               <p>boas compras.</p>
             </div>
           }
-          <Search>
-            <MdSearch onClick={searching ? undefined : handleSearch}/>
+          <Search onClick={searching ? undefined : handleSearch}>
+            <MdSearch/>
             { searching && (
               <>
                 <input type='text' onChange={changeSearch}/>
