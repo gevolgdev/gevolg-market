@@ -1,23 +1,37 @@
-import React, { Key } from 'react'
-import { Path, useLocation, useParams } from 'react-router-dom'
-import { ListProps } from '../../types/types';
-
-interface Location extends Path {
-  state: any;
-  key: Key;
-}
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+import ButtonBack from '../ButtonBack';
+import { Container, Header, Content } from './style';
+import Logo from '../../assets/logo-light.png';
+import { AiFillDelete } from 'react-icons/ai';
+import deleteList from '../../utils/deleteList';
 
 const BodyList: React.FC = () => {
 
-  const { id } = useParams();
   const location = useLocation();
-  const { currentDataPage } = location.state;
+  const { newCurrentPage } = location?.state;
+
+  const { deleted } = deleteList(newCurrentPage.index);
 
   return (
-    <div>
-      Detalhes da lista de compras: {id}
-      <span>{}</span>
-    </div>
+    <>
+      <Header color={newCurrentPage.color}>
+        <ButtonBack/>
+        <img src={Logo}/>
+        <button className='delete' onClick={deleted}><AiFillDelete/></button>
+      </Header>
+      <Container>
+
+        <Content>
+          <div className="header">
+            <span>Prioridade {newCurrentPage.priority.toLowerCase()}</span>
+            <h1>{newCurrentPage.title}</h1>
+            <h1>Index: {newCurrentPage.index}</h1>
+          </div>
+        </Content>
+        
+      </Container>
+    </>
   );
 };
 
