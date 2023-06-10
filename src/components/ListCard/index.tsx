@@ -19,7 +19,7 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
         <span>{priority}</span>
         <MdArrowOutward/>
       </div>
-      <h2>{title}</h2>
+      <h2>{index + 1}. {title}</h2>
       <p><HiOutlineMinus/> {currentDate}</p>
     </Container>
   )
