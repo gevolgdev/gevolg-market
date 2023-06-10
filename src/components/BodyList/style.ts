@@ -27,7 +27,7 @@ export const Header = styled.div<ColorProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .5rem;
+    padding: .4rem;
     border-radius: 7px;
     margin-top: 3px;
     color: #dc2626;
@@ -47,9 +47,14 @@ export const Content = styled.div`
     gap: .6rem;
     h1 {
       font-size: 2rem;
+      font-weight: 500;
       color: #0E1433;
+      span {
+        font-weight: bold;
+        color: #0E1433;
+      }
     }
-    span {
+    p {
       color: #0E1433;
       opacity: 80%;
     }
