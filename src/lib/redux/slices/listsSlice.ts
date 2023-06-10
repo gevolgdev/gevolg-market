@@ -7,6 +7,7 @@ const initialState: ListProps[] = [{
   title: '',
   priority: '',
   color: '',
+  products: [],
 }];
 
 const listSlice = createSlice({
