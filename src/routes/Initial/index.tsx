@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Background, Container, Buttons } from "./style";
 import IMAGE_BG from '../../assets/background-initial.png';
-import LOGO from '../../assets/logo-dark.png';
+import LOGO from '../../assets/logo-dark.svg';
 
 
 const Initial: React.FC = () => {

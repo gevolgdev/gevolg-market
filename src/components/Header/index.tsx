@@ -1,6 +1,6 @@
 import { BoxName, Container, Cart } from './style';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import LOGO from '../../assets/logo-dark.png';
+import LOGO from '../../assets/logo-dark.svg';
 
 interface NameProps {
   name: string;
