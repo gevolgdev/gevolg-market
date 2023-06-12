@@ -1,14 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { ListProps } from "../types/types";
-import { RootState } from "../lib/redux/reducer";
-import { addLists, removeList } from "../lib/redux/slices/listsSlice";
+import { useDispatch } from "react-redux";
+import { DeleteProps } from "../types/types";
+import { removeList } from "../lib/redux/slices/listsSlice";
 import { useNavigate } from "react-router-dom";
 
-interface IndexProps {
-  index: number;
+interface DeleteListResult {
+  deleted: () => void;
 };
 
-const deleteList = (index: number) => {
+const deleteList = (index: number): DeleteListResult => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
