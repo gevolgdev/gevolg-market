@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 
 export interface ProductsProps {
   name: string;
@@ -15,3 +16,9 @@ export interface ListProps {
 };  
 
 export type EventProps = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
+
+export interface DeleteProps {
+  title: string;
+  index: number;
+  setConfirmDelete: Dispatch<React.SetStateAction<boolean>>;
+};
