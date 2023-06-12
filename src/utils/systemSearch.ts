@@ -3,6 +3,13 @@ import { useSelector } from 'react-redux';
 import { EventProps, ListProps } from '../types/types';
 import { RootState } from '../lib/redux/reducer';
 
+interface SystemSearchProps {
+  searching: () => boolean;
+  resultSearch: () => ListProps[];
+  handleSearch: () => void;
+  changeSearch: () => void;
+};
+
 const systemSearch = () => {
 
   const [keywordSearch, setKeywordSearch] = useState<string>('');
@@ -21,7 +28,7 @@ const systemSearch = () => {
 
   let resultSearch: ListProps[] = lists.filter((item: ListProps) => {
     if(keywordSearch === '') return;
-    if(item.title.toLocaleLowerCase().includes(keywordSearch.toLocaleLowerCase())) return item;
+    return item.title.toLocaleLowerCase().includes(keywordSearch.toLocaleLowerCase());
   });
   
   return { searching, resultSearch, handleSearch, changeSearch };
