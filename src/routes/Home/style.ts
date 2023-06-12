@@ -38,6 +38,7 @@ export const Search = styled.div`
 
   svg {
     font-size: 1.5rem;
+    color: #4C4C4C;
   }
   input {
     font-family: 'Inter Tight';
