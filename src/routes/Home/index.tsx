@@ -16,12 +16,12 @@ const Home: React.FC = () => {
   const { searching, handleSearch, changeSearch, resultSearch } = systemSearch();
   const showModalList = useSelector((state: RootState) => state.showModalSlice);  
   
-  const name: string = 'Camille';
+  const name: string = 'usuário';
 
   return (
     <>
       {showModalList.active && <AddList/>}
-      <Header name={name}/>
+      <Header name={name.toUpperCase()}/>
       <Container>
         <WelcomeHeader toCenterDiv={searching}>
           { searching || 
