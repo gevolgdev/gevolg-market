@@ -7,7 +7,7 @@ const ButtonBack = () => {
   const navigate = useNavigate();
 
   return (
-    <Container onClick={() => navigate(`/`)}>
+    <Container onClick={() => navigate(-1)}>
       <BsArrowLeftShort/>
     </Container>
   );
