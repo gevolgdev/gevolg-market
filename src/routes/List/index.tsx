@@ -24,7 +24,7 @@ const List: React.FC = () => {
         title={title}
       /> }
 
-      { productForm && <h1 onClick={() => setProductForm(false)}>Abriu tela</h1> }4
+      { productForm && <h1 onClick={() => setProductForm(false)}>Abriu tela</h1> }
 
       <Header color={ color }>
         <ButtonBack/>
