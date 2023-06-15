@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
-import ButtonBack from '../../components/ButtonBack';
+import ButtonBack from '../../components/ListInside/ButtonBack';
 import { Container, Header, Content, ProductsItens, Buttons } from './style';
 import Logo from '../../assets/logo-light.svg';
 import { AiFillDelete } from 'react-icons/ai';
-import DeleteContainer from '../../components/DeleteContainer';
+import DeleteContainer from '../../components/ListInside/DeleteContainer';
 import addProductList from '../../utils/addProductList';
+import AddingProduct from '../../components/ListInside/AddingProduct';
 
 const List: React.FC = () => {
 
@@ -24,7 +25,7 @@ const List: React.FC = () => {
         title={title}
       /> }
 
-      { productForm && <h1 onClick={() => setProductForm(false)}>Abriu tela</h1> }
+      { productForm && <AddingProduct setProductForm={setProductForm}/> }
 
       <Header color={ color }>
         <ButtonBack/>
