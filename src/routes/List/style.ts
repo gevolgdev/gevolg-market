@@ -62,7 +62,40 @@ export const Content = styled.div`
 `;
 
 export const ProductsItens = styled.section`
-  
+  display: flex;
+  height: 60vh;
+  padding-bottom: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+`;
+
+export const Product = styled.div`
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 7px;
+  background: #EDEDED;
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    border: solid 2px #19191F;
+    border-radius: 3px;
+  };
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0E1433;
+
+    span {
+      opacity: 70%;
+    }
+  }
 `;
 
 export const Buttons = styled.div`

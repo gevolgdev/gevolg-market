@@ -1,25 +1,23 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
-import ButtonBack from '../../components/ListInside/ButtonBack';
-import { Container, Header, Content, ProductsItens, Buttons } from './style';
-import Logo from '../../assets/logo-light.svg';
 import { AiFillDelete } from 'react-icons/ai';
-import DeleteContainer from '../../components/ListInside/DeleteContainer';
-import addProductList from '../../utils/addProductList';
-import AddingProduct from '../../components/ListInside/AddingProduct';
+import Logo from '../../assets/logo-light.svg';
+import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
+import { AddingProduct, ButtonBack, DeleteContainer } from '../../components/ListInside';
+import { addProductList } from '../../utils';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import { ListProps } from '../../types/types';
 
 const List: React.FC = () => {
 
-  const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
-  const { openAddProduct, setOpenAddProduct } = addProductList(0);
-  const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
-  
   const location = useLocation();
   const { newCurrentPage } = location?.state;
   const {color, priority, index, title} = newCurrentPage;
+
+  const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
+  const { openAddProduct, setOpenAddProduct } = addProductList(0);
+  const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
   
   const products = lists[index].products;
 
@@ -50,16 +48,12 @@ const List: React.FC = () => {
         </Content>
 
         <ProductsItens>
-          <div className="content">
-            {products.map(item => (
-              <div>
-                Titulo: {item.title}<br/>
-                Quantidade: {item.amount}<br/>
-                Seção: {item.section}<br/>
-                Coletado: {item.collected ? 'Sim' : 'Não'}
-              </div>
-            ))}
-          </div>
+          {products.map(item => (
+            <Product>
+              <button className='checkbox'/>
+              <h1>{item.amount} {item.title} - <span>{item.section}</span></h1>
+            </Product>
+          ))}
         </ProductsItens>
 
         <Buttons>
