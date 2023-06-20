@@ -9,7 +9,7 @@ import { RootState } from '../lib/redux/reducer';
 const useLists = () => {
 
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
-  const INITIAL_VALUE: ListProps = { priority: '', title: '', color: '' };
+  const INITIAL_VALUE: ListProps = { priority: '', title: '', color: '', products: [] };
   const [newList, setNewList] = useState<ListProps>(INITIAL_VALUE);
   const dispatch = useDispatch();
   const navigate = useNavigate();
