@@ -12,7 +12,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 5rem;
 `;
 
 export const Header = styled.div<ColorProps>`
@@ -80,7 +80,6 @@ export const Content = styled.div`
 
 export const ProductsItens = styled.section`
   display: flex;
-  height: 300px;
   background: transparent;
   padding-bottom: 4rem;
   flex-direction: column;
@@ -122,7 +121,7 @@ export const Product = styled.div<ProductProps>`
 `;
 
 export const Buttons = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   padding: 1.5rem 2rem;
