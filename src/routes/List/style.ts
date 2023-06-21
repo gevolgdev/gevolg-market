@@ -11,7 +11,7 @@ interface ProductProps {
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.3rem;
   padding: 1rem 1.5rem;
 `;
 
@@ -80,8 +80,9 @@ export const Content = styled.div`
 
 export const ProductsItens = styled.section`
   display: flex;
-  height: 60vh;
-  padding-bottom: 3rem;
+  height: 300px;
+  background: transparent;
+  padding-bottom: 4rem;
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
@@ -124,7 +125,7 @@ export const Buttons = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   width: 100%;
   display: flex;
   justify-content: center;

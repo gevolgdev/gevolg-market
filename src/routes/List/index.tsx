@@ -4,7 +4,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BsCheck } from 'react-icons/bs';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
-import { AddingProduct, ButtonBack, DeleteContainer } from '../../components/ListInside';
+import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/ListInside';
 import useProduct from '../../hooks/useProduct';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
@@ -17,7 +17,14 @@ const List: React.FC = () => {
   const {color, priority, index, title} = newCurrentPage;
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
-  const { openAddProduct, setOpenAddProduct, collected, unchecks } = useProduct(index);
+
+  const { 
+    openAddProduct, 
+    setOpenAddProduct, 
+    collected, 
+    unchecks 
+  } = useProduct(index);
+
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
   
   const products = lists[index].products.slice(1);
@@ -53,13 +60,17 @@ const List: React.FC = () => {
           </div>
         </Content>
 
+        <ListDetails
+          products={products}
+        />
+
         <ProductsItens>
-          {products.map((item, index) => (
+          { products.map((item, index) => (
             <Product collected={item.collected}>
               <button className='checkbox' onClick={ () => collected(index) }>
                 {item.collected && <BsCheck/>}
               </button>
-              <h1>{item.amount} {item.title} - <span>{item.section}</span></h1>
+              <h1>({item.amount}) {item.title} - <span>{item.section}</span></h1>
             </Product>
           ))}
         </ProductsItens>
