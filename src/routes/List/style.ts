@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 interface ColorProps {
   color: string;
-}
+};
+
+interface ProductProps {
+  collected: boolean;
+};
 
 export const Container = styled.section`
   display: flex;
@@ -70,28 +74,33 @@ export const ProductsItens = styled.section`
   overflow-y: auto;
 `;
 
-export const Product = styled.div`
+export const Product = styled.div<ProductProps>`
   width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   border-radius: 7px;
-  background: #EDEDED;
+  background: ${({collected}) => collected ? '#DCFFEF' : '#EDEDED'};
 
   .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 20px;
     height: 20px;
     margin-right: 1rem;
-    border: solid 2px #19191F;
+    border: ${({collected}) => collected ? 'solid 2px #51FFB0' : 'solid 2px #19191F'};
     border-radius: 3px;
+    background: ${({collected}) => collected ? '#51FFB0' : '#EDEDED'};
+    font-size: 1rem;
   };
 
   h1 {
     font-size: 1rem;
     font-weight: 600;
     color: #0E1433;
-
+    text-decoration: ${({collected}) => collected ? 'line-through' : 'none'};
     span {
       opacity: 70%;
     }

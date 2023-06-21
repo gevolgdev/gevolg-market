@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { ProductListProps } from '../types/types';
 import { useDispatch } from 'react-redux';
-import { addingProduct } from '../lib/redux/slices/listsSlice';
+import { addingProduct, collectedCheck } from '../lib/redux/slices/listsSlice';
 
 // interface AddProductListProps {
 //   addProduct: () => void;
@@ -24,9 +24,13 @@ const addProductList = (index: number) => {
     setProduct(prev => ({...prev, [id]: value}));
   };
 
+  const collected = (indexProduct: number) => {
+    Dispatch(collectedCheck([index, indexProduct]));
+  };
+
   const addProduct = () => Dispatch(addingProduct(product));
 
-  return { addProduct, openAddProduct, setOpenAddProduct, saveInfosProduct };
+  return { addProduct, openAddProduct, setOpenAddProduct, saveInfosProduct, collected };
 };
 
 export default addProductList;
