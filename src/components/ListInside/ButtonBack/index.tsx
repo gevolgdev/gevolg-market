@@ -27,7 +27,7 @@ const ButtonBack: React.FC<ButtonProps> = ({ mode }) => {
   const navigate = useNavigate();
 
   return (
-    <Container onClick={() => navigate(-1)} color={setModeColor(mode)}>
+    <Container onClick={() => navigate('/')} color={setModeColor(mode)}>
       <BsArrowLeftShort/>
     </Container>
   );
