@@ -43,7 +43,12 @@ const List: React.FC = () => {
       <Container>
         <Content>
           <div className="header">
-            <p>Prioridade { priority.toLowerCase() }</p>
+            <p>
+              Prioridade { priority.toLowerCase() }
+              {products.length > 0 && 
+                <button onClick={ () => unchecks(index) } className='unchecks'>Desmarcar tudo</button>
+              }
+            </p>
             <h1><span>{index + 1}.</span> {title}</h1>
           </div>
         </Content>
@@ -57,9 +62,6 @@ const List: React.FC = () => {
               <h1>{item.amount} {item.title} - <span>{item.section}</span></h1>
             </Product>
           ))}
-          {products.length> 0 && 
-            <button onClick={ () => unchecks(index) } className='unchecks'>Desmarcar tudo</button>
-          }
         </ProductsItens>
 
         <Buttons>

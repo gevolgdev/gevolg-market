@@ -59,8 +59,21 @@ export const Content = styled.div`
       }
     }
     p {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       color: #0E1433;
       opacity: 80%;
+
+      .unchecks {
+        display: flex;
+        border: none;
+        background: transparent;
+        text-decoration: underline;
+        opacity: 80%;
+
+        margin-bottom: 1rem;
+  }
     }
   }
 `;
@@ -72,17 +85,6 @@ export const ProductsItens = styled.section`
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
-
-  .unchecks {
-    display: flex;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    text-decoration: underline;
-    opacity: 80%;
-
-    margin-top: 1rem;
-  }
 `;
 
 export const Product = styled.div<ProductProps>`
