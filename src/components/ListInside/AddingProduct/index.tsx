@@ -3,7 +3,7 @@ import { Container, Button, Header, Inputs } from './style';
 import { Wrapper } from '../../../style/GlobalStyle';
 import Logo from '../../../assets/logo-light.svg';
 import { GrFormClose } from 'react-icons/gr';
-import addProductList from '../../../utils/addProductList';
+import addProductList from '../../../hooks/useProduct';
 
 interface AddingProductProps {
   setOpenAddProduct: Dispatch<React.SetStateAction<boolean>>;

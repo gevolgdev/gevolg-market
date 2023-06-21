@@ -72,6 +72,17 @@ export const ProductsItens = styled.section`
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
+
+  .unchecks {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    opacity: 80%;
+
+    margin-top: 1rem;
+  }
 `;
 
 export const Product = styled.div<ProductProps>`

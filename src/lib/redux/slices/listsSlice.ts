@@ -52,7 +52,14 @@ const listSlice = createSlice({
       products[payload[1] + 1].collected = !collectedIndex;
 
       return state;
-    }
+    },
+    collectedUnChecks: (state, { payload }: PayloadAction<number>) => {
+      for(let i = 0; i < state[payload + 1].products.length; i++) {
+        state[payload + 1].products[i].collected = false;
+      };
+
+      return state;
+    },
   }
 });
 
@@ -61,5 +68,6 @@ export const { addLists } = listSlice.actions;
 export const { removeList } = listSlice.actions;
 export const { addingProduct } = listSlice.actions;
 export const { collectedCheck } = listSlice.actions;
+export const { collectedUnChecks } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
