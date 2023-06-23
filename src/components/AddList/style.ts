@@ -11,8 +11,8 @@ export const Container = styled.div`
 
   .content {
     width: 100%;
-    height: 100%;
     padding: 3rem 2rem 2rem;
+    gap: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,10 +63,8 @@ export const Container = styled.div`
           padding: 15px;
         }
       }
-    }
-      
+    }  
   }
-
 `;
 
 export const Button = styled.button`

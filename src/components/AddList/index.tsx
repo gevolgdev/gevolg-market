@@ -25,14 +25,13 @@ const AddList = () => {
             <label>Prioridade</label>
             <select onChange={handleSaveLists} id='priority' defaultValue='--'>
               <option value="--" disabled>--</option>
-              <option value="Teste">Teste</option>
               <option value="Baixa">Baixa</option>
               <option value="Média">Média</option>
               <option value="Alta">Alta</option>
             </select>
           </div>
           <div>
-            <label>Cor</label>
+            <label>Cor da lista</label>
             <select onChange={handleSaveLists} id='color' defaultValue='--'>
               <option value='--'>Padrão</option>
               <option value='#1e40af'>Azul</option>
