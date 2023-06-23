@@ -10,7 +10,7 @@ const initialState: ListProps[] = [{
   products: [
     {title: '',
     amount: 0,
-    section: '',
+    category: '',
     index: 0,
     collected: false,}
   ],
@@ -27,7 +27,7 @@ const listSlice = createSlice({
         color: payload.color,
         products: [{title: '',
         amount: 0,
-        section: '',
+        category: '',
         index: 0,
         collected: false}],
       }
