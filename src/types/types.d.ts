@@ -20,7 +20,7 @@ export interface DeleteProps {
 export interface ProductListProps {
   title: string;
   amount: number;
-  section: string;
+  category: string;
   index: number;
   collected: boolean;
 };

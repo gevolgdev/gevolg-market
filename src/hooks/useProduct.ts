@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react'
-import { ProductListProps } from '../types/types';
+import { EventProps, ProductListProps } from '../types/types';
 import { useDispatch } from 'react-redux';
 import { addingProduct, collectedCheck, collectedUnChecks } from '../lib/redux/slices/listsSlice';
 
@@ -13,15 +13,16 @@ import { addingProduct, collectedCheck, collectedUnChecks } from '../lib/redux/s
 const useProduct = (index: number) => {
 
   const INITIAL_VALUE: ProductListProps = 
-    { title: '', amount: 0, section: '', index: index, collected: false }
+    { title: '', amount: 0, category: '', index: index, collected: false }
   ;
   const [product, setProduct] = useState<ProductListProps>(INITIAL_VALUE);
   const [openAddProduct, setOpenAddProduct] = useState<boolean>(false);
   const Dispatch = useDispatch();
 
-  const saveInfosProduct = (e: ChangeEvent<HTMLInputElement>) => {
+  const saveInfosProduct = (e: EventProps) => {
     const { id, value } = e.target;
     setProduct(prev => ({...prev, [id]: value}));
+    console.log( id, value );
   };
   
   const addProduct = () => Dispatch(addingProduct(product));
