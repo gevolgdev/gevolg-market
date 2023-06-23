@@ -70,7 +70,7 @@ const List: React.FC = () => {
               <button className='checkbox' onClick={ () => collected(index) }>
                 {item.collected && <BsCheck/>}
               </button>
-              <h1>({item.amount}) {item.title} - <span>{item.section}</span></h1>
+              <h1>( {item.amount === 0 ? '1' : item.amount} ) {item.title} - <span>{item.category}</span></h1>
             </Product>
           ))}
         </ProductsItens>
