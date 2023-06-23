@@ -4,6 +4,7 @@ import { Wrapper } from '../../../style/GlobalStyle';
 import Logo from '../../../assets/logo-light.svg';
 import { GrFormClose } from 'react-icons/gr';
 import addProductList from '../../../hooks/useProduct';
+import { dataCategories } from './dataCategories';
 
 interface AddingProductProps {
   setOpenAddProduct: Dispatch<React.SetStateAction<boolean>>;
@@ -35,8 +36,14 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
             <input id='amount' type='number' onChange={saveInfosProduct}/>
           </div>
           <div>
-            <label>Seção</label>
-            <input id='section' type='text' onChange={saveInfosProduct}/>
+            <label>Categoria</label>
+            {/* <input id='category' type='text' onChange={saveInfosProduct}/> */}
+            <select onChange={saveInfosProduct} id='category' defaultValue='--'>
+              <option value='--'>--</option>
+              {dataCategories.sort().map(item => (
+                <option value={item}>{item}</option>
+              ))}
+            </select>
           </div>
         </Inputs>
 

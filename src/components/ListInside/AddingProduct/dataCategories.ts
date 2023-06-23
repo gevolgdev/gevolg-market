@@ -1,0 +1,17 @@
+export const dataCategories = [
+  'Drogarias',
+  'Comemorações',
+  'Diet, Saudáveis & Veganos',
+  'Bebidas',
+  'Mercearia',
+  'Açougue & Peixaria',
+  'Frios & Laticínios',
+  'Padarias & Matinais',
+  'Congelados & Sobremesas',
+  'HortiFruti',
+  'Bebê & Infantil',
+  'Limpeza',
+  'Higiene & Perfumaria',
+  'Utilidades & Casa',
+  'Mundo Pet',
+];
