@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { EventProps, ProductListProps } from '../types/types';
 import { useDispatch } from 'react-redux';
-import { addingProduct, collectedCheck, collectedUnChecks } from '../lib/redux/slices/listsSlice';
+import { addingProduct, collectedCheck, collectedUnChecks, removeProduct } from '../lib/redux/slices/listsSlice';
 
 // interface AddProductListProps {
 //   addProduct: () => void;
@@ -35,13 +35,19 @@ const useProduct = (index: number) => {
     Dispatch(collectedCheck([index, indexProduct]));
   };
 
+  const removeProductList = (indexMain: number, indexChild: number) => {
+    console.log(indexMain, indexChild);
+    Dispatch(removeProduct([indexMain, indexChild]));
+  };
+
   return { 
     addProduct, 
     openAddProduct, 
     setOpenAddProduct, 
     saveInfosProduct, 
     collected, 
-    unchecks
+    unchecks,
+    removeProductList,
   };
 };
 

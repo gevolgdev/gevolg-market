@@ -60,6 +60,11 @@ const listSlice = createSlice({
 
       return state;
     },
+    removeProduct: (state, { payload }: PayloadAction<number[]>) => {
+      state[payload[0] + 1].products.splice(payload[1] + 1, 1); 
+
+      return state;
+    },
   }
 });
 
@@ -69,5 +74,6 @@ export const { removeList } = listSlice.actions;
 export const { addingProduct } = listSlice.actions;
 export const { collectedCheck } = listSlice.actions;
 export const { collectedUnChecks } = listSlice.actions;
+export const { removeProduct } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
