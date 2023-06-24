@@ -7,7 +7,7 @@ import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
 import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/ListInside';
 import useProduct from '../../hooks/useProduct';
-import orderProducts from '../../utils/orderProducts';
+// import orderProducts from '../../utils/orderProducts'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import { ListProps } from '../../types/types';
@@ -29,7 +29,7 @@ const List: React.FC = () => {
     removeProductList,
   } = useProduct(index);
 
-  const { order } = orderProducts();
+  // const { order } = orderProducts();
 
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
   
