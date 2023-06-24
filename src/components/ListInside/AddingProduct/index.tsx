@@ -2,7 +2,7 @@ import React, { Dispatch } from 'react'
 import { Container, Button, Header, Inputs } from './style';
 import { Wrapper } from '../../../style/GlobalStyle';
 import Logo from '../../../assets/logo-light.svg';
-import { GrFormClose } from 'react-icons/gr';
+import { MdClose } from 'react-icons/md';
 import addProductList from '../../../hooks/useProduct';
 import { dataCategories } from './dataCategories';
 
@@ -19,14 +19,14 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
     <Container>
       <Wrapper>
         <Header>
-          <img src={Logo}/>
+          {/* <img src={Logo}/> */}
+          <h1>Adicione um produto</h1>
           <button onClick={ () => setOpenAddProduct(false) }>
-            <GrFormClose color='#FAF8F0'/>
+            <MdClose/>
           </button>
         </Header>
 
         <Inputs>
-          <h1>Adicione um produto</h1>
           <div>
             <label>Título do Produto</label>
             <input id='title' type='text' onChange={saveInfosProduct}/>

@@ -7,7 +7,7 @@ export const Container = styled.section`
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem 0;
   background: #9B7BFF;
   z-index: 99;
 `;
@@ -16,13 +16,8 @@ export const Inputs = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
+  margin-top: 3rem;
   gap: 1rem;
-
-  h1 {
-    font-size: 2rem;
-    margin: 2rem 0 1rem;
-    color: #FAF8F0;
-  }
 
   div {
     display: flex;
@@ -50,16 +45,23 @@ export const Header = styled.header`
   margin-left: auto;
   padding: 1rem 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: end;
+
+  h1 {
+    font-size: 2rem;
+    color: #FAF8F0;
+  }
 
   button {
     display: flex;
     align-items: start;
-    font-size: 2rem;
-    background: transparent;
+    font-size: 1.3rem;
+    background: white;
+    padding: 0.3rem;
     border: none;
-    color: #FAF8F0;
+    border-radius: 7px;
+    color: #dc2626;
     cursor: pointer;
   }                                             
 `;
