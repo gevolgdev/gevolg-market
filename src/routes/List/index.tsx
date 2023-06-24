@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
+import { BiTrash } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
 import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/ListInside';
 import useProduct from '../../hooks/useProduct';
-import { useSelector } from 'react-redux';
+import orderProducts from '../../utils/orderProducts';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import { ListProps } from '../../types/types';
 
@@ -17,17 +19,28 @@ const List: React.FC = () => {
   const {color, priority, index, title} = newCurrentPage;
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
+  const Dispatch = useDispatch();
 
   const { 
     openAddProduct, 
     setOpenAddProduct, 
     collected, 
-    unchecks 
+    unchecks,
+    removeProductList,
   } = useProduct(index);
+
+  const { order } = orderProducts();
 
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
   
   const products = lists[index].products.slice(1);
+
+  let uncheckPermission: boolean = false;
+  for(let i = 0; i < products.length; i++) {
+    if(products[i].collected === true) {
+      uncheckPermission = true;
+    }
+  };
 
   return (
     <>
@@ -52,7 +65,7 @@ const List: React.FC = () => {
           <div className="header">
             <p>
               Prioridade { priority.toLowerCase() }
-              {products.length > 0 && 
+              {uncheckPermission && 
                 <button onClick={ () => unchecks(index) } className='unchecks'>Desmarcar tudo</button>
               }
             </p>
@@ -65,18 +78,23 @@ const List: React.FC = () => {
         />
 
         <ProductsItens>
-          { products.map((item, index) => (
-            <Product collected={item.collected}>
-              <button className='checkbox' onClick={ () => collected(index) }>
-                {item.collected && <BsCheck/>}
+          { products.map((item, i) => (
+            <Product collected={item.collected} key={item.title}>
+              <div>
+                <button className='checkbox' onClick={ () => collected(i) }>
+                  {item.collected && <BsCheck/>}
+                </button>
+                <h1>( {item.amount === 0 ? '1' : item.amount} ) {item.title} - <span>{item.category}</span></h1>
+              </div>
+              <button onClick={() => removeProductList(index, i)} className='delete'>
+                <BiTrash/>
               </button>
-              <h1>( {item.amount === 0 ? '1' : item.amount} ) {item.title} - <span>{item.category}</span></h1>
             </Product>
           ))}
         </ProductsItens>
 
         <Buttons>
-          <button className="manager">Gerenciar</button>
+          {/* <button className="manager">Gerenciar</button> */}
           <button onClick={() => setOpenAddProduct(true)} className="add">Adicionar</button>
         </Buttons>
 

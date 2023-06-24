@@ -71,8 +71,6 @@ export const Content = styled.div`
         background: transparent;
         text-decoration: underline;
         opacity: 80%;
-
-        margin-bottom: 1rem;
   }
     }
   }
@@ -92,10 +90,15 @@ export const Product = styled.div<ProductProps>`
   padding: 1rem;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   border-radius: 7px;
   background: ${({collected}) => collected ? '#DCFFEF' : '#EDEDED'};
 
+  div {
+    display: flex;
+    flex-direction: row;
+  }
   .checkbox {
     display: flex;
     align-items: center;
@@ -107,7 +110,7 @@ export const Product = styled.div<ProductProps>`
     border-radius: 3px;
     background: ${({collected}) => collected ? '#51FFB0' : '#EDEDED'};
     font-size: 1rem;
-  };
+  }
 
   h1 {
     font-size: 1rem;
@@ -117,6 +120,18 @@ export const Product = styled.div<ProductProps>`
     span {
       opacity: 70%;
     }
+  }
+
+  .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    color: #dc2626;
+    margin-left: 1rem;
   }
 `;
 
