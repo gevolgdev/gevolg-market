@@ -18,6 +18,7 @@ export const Container = styled.div`
     display: flex;
     padding: 0 1rem;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     
     img {
@@ -69,8 +70,9 @@ export const Buttons = styled.div`
 
 export const Background = styled.div<ImagesProps>`
   width: 100%;
-  height: 290px;
+  height: 300px;
   background: ${({image}) => `url(${image}) no-repeat`};
   background-size: cover;
   background-position: center;
+  margin-bottom: .5rem;
 `; 
