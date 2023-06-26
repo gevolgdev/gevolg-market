@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   return (
     <>
       {setName.set || <UserSetName/>}
-      <button onClick={handleShowSetName}>Mudar Nome</button>
+      {/* <button onClick={handleShowSetName}>Mudar Nome</button> */}
 
       {showModalList.active && <AddList/>}
       <Header name={name.toUpperCase()}/>
