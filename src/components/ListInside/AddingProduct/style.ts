@@ -7,7 +7,7 @@ export const Container = styled.section`
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 3rem 1.5rem 0;
+  padding: 3rem;
   background: #9B7BFF;
   z-index: 99;
 `;
@@ -15,7 +15,6 @@ export const Container = styled.section`
 export const Inputs = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem;
   margin-top: 3rem;
   gap: 1rem;
 
@@ -43,10 +42,10 @@ export const Inputs = styled.div`
 export const Header = styled.header`
   width: 100%;
   margin-left: auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 
   h1 {
     font-size: 2rem;
@@ -67,7 +66,7 @@ export const Header = styled.header`
 `;
 
 export const Button = styled.button`
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   font-family: 'Inter Tight', sans-serif;
