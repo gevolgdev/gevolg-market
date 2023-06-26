@@ -1,8 +1,8 @@
 import { MdArrowOutward } from 'react-icons/md';
 import { HiOutlineMinus } from 'react-icons/hi';
-import { ListProps } from '../../types/types';
+import { ListProps } from '../../../types/types';
 import { Container } from './style';
-import useCreateLists from '../../hooks/useCreateLists';
+import useCreateLists from '../../../hooks/useCreateLists';
 
 const ListCard: React.FC<ListProps & {index: number}> = ({
   title, 

@@ -1,6 +1,6 @@
 import { GrFormClose } from 'react-icons/gr';
 import { Button, Container } from "./style";
-import useLists from "../../hooks/useCreateLists";
+import useLists from "../../../hooks/useCreateLists";
 
 const AddList = () => {
 

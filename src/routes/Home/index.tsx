@@ -1,5 +1,6 @@
-import { AddList, Header, UserSetName } from '../../components';
-import Lists from '../../components/Lists';
+import { AddList, Header } from '../../components/Home';
+import { UserSetName } from '../../components';
+import Lists from '../../components/Home/Lists';
 import { AddButton, Container, Search, WelcomeHeader, SearchResults } from './style';
 import { GrFormClose } from 'react-icons/gr';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +8,7 @@ import { MdSearch, MdAdd } from 'react-icons/md';
 import useLists from '../../hooks/useCreateLists';
 import { RootState } from '../../lib/redux/reducer';
 import systemSearch from '../../utils/systemSearch';
-import ListCard from '../../components/ListCard';
+import ListCard from '../../components/Home/ListCard';
 import { showSetName } from '../../lib/redux/slices/setNameSlice';
 
 
@@ -28,7 +29,7 @@ const Home: React.FC = () => {
   return (
     <>
       {setName.set || <UserSetName/>}
-      {/* <button onClick={handleShowSetName}>Mudar Nome</button> */}
+      <button onClick={handleShowSetName}>Mudar Nome</button>
 
       {showModalList.active && <AddList/>}
       <Header name={name.toUpperCase()}/>

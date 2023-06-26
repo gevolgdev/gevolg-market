@@ -5,7 +5,7 @@ import { BiTrash } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
-import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/ListInside';
+import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/List';
 import useProduct from '../../hooks/useProduct';
 // import orderProducts from '../../utils/orderProducts'; 
 import { useDispatch, useSelector } from 'react-redux';
