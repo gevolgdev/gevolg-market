@@ -1,13 +1,14 @@
-import { AddList, Header } from '../../components';
+import { AddList, Header, UserSetName } from '../../components';
 import Lists from '../../components/Lists';
 import { AddButton, Container, Search, WelcomeHeader, SearchResults } from './style';
 import { GrFormClose } from 'react-icons/gr';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { MdSearch, MdAdd } from 'react-icons/md';
 import useLists from '../../hooks/useCreateLists';
 import { RootState } from '../../lib/redux/reducer';
 import systemSearch from '../../utils/systemSearch';
 import ListCard from '../../components/ListCard';
+import { showSetName } from '../../lib/redux/slices/setNameSlice';
 
 
 const Home: React.FC = () => {
@@ -15,11 +16,20 @@ const Home: React.FC = () => {
   const { openModal } = useLists();
   const { searching, handleSearch, changeSearch, resultSearch } = systemSearch();
   const showModalList = useSelector((state: RootState) => state.showModalSlice);  
+  const setName = useSelector((state: RootState) => state.setNameSlice);  
+
+  const Dispatch = useDispatch();
+  function handleShowSetName() {
+    Dispatch(showSetName(false));
+  };
   
-  const name: string = 'usuário';
+  const name: string = setName.name;
 
   return (
     <>
+      {setName.set || <UserSetName/>}
+      {/* <button onClick={handleShowSetName}>Mudar Nome</button> */}
+
       {showModalList.active && <AddList/>}
       <Header name={name.toUpperCase()}/>
       <Container>
