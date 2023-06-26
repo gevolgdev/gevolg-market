@@ -10,15 +10,16 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
   z-index: 98;
   background: white;
 
   .infos {
     display: flex;
-    padding: 0 2rem;
+    padding: 0 1rem;
     flex-direction: column;
     gap: 20px;
+    
     img {
       display: block;
       margin: 0 auto;
@@ -28,7 +29,7 @@ export const Container = styled.div`
       color: #0E1433; 
     }
     p {
-      width: 100%;
+      width: 300px;
       color: #605F63;
       text-align: center;
     }

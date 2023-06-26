@@ -7,7 +7,7 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   background: white;
   z-index: 99;
   gap: 5rem;
