@@ -10,6 +10,7 @@ export const Container = styled.div`
   padding: 3rem 1.5rem;
   background: #9B7BFF;
   z-index: 99;
+  gap: 5rem;
 
   img {
     width: 200px;
@@ -20,7 +21,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: auto 0;
 
     h1 {
       font-size: 2rem;
@@ -53,7 +53,6 @@ export const Container = styled.div`
   justify-content: center;
   font-weight: bold;
   font-size: 1rem;
-  margin: auto 0 0;
   padding: 0.9rem;
   border-radius: 100px;
   background: #51FFB0;
