@@ -5,11 +5,14 @@ interface ImagesProps {
 };
 
 export const Container = styled.div`
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
+  z-index: 98;
+  background: white;
 
   .infos {
     display: flex;

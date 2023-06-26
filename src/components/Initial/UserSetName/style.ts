@@ -8,12 +8,12 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding: 3rem 1.5rem;
-  background: #9B7BFF;
+  background: white;
   z-index: 99;
   gap: 5rem;
 
   img {
-    width: 200px;
+    display: block;
     margin: 0 auto;
   }
 
@@ -24,7 +24,7 @@ export const Container = styled.div`
 
     h1 {
       font-size: 2rem;
-      color: white;
+      color: #0E1433;
     }
 
     p {
@@ -48,15 +48,16 @@ export const Container = styled.div`
   }
 
   button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.9rem;
-  border-radius: 100px;
-  background: #51FFB0;
-  border: none;
-  cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.9rem;
+    margin-top: auto;
+    border-radius: 100px;
+    color: white;
+    background: #9B7BFF;
+    border: none;
+    cursor: pointer;
   }
 `;

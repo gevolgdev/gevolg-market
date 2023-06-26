@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react'
 import { Container } from './style';
 import { useDispatch } from 'react-redux';
-import { setName, showSetName } from '../../lib/redux/slices/setNameSlice';
-import logo from '../../assets/logo-light.svg';
+import { setName, showSetName } from '../../../lib/redux/slices/setNameSlice';
+import logo from '../../../assets/logo-dark.svg';
 
 const UserSetName = () => {
 
@@ -21,14 +21,10 @@ const UserSetName = () => {
     <Container>
       <img src={logo}/>
       <div className='content'>
-        <h1>Bem-vindos(as),</h1>
-        <p>
-          ao melhor aplicativo para organizar suas listas de compras e salva-las 
-          para usa-la posteriormente. Digite seu primeiro nome ou apelido.
-        </p>
+        <h1>Qual é seu <br/> nome/apelido?</h1>
         <input onChange={handleSetName} type='text' placeholder='Digite aqui...'/>
       </div>
-      <button onClick={handleShowSetName}>Concluir</button>
+      <button onClick={handleShowSetName}>Continuar</button>
     </Container>
   )
 }

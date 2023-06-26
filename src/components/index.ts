@@ -1,5 +1,5 @@
-import UserSetName from "./UserSetName";
+import Initial from "./Initial";
 
 export {
-  UserSetName,
+  Initial,
 };

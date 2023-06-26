@@ -1,5 +1,5 @@
 import { AddList, Header } from '../../components/Home';
-import { UserSetName } from '../../components';
+import { Initial } from '../../components';
 import Lists from '../../components/Home/Lists';
 import { AddButton, Container, Search, WelcomeHeader, SearchResults } from './style';
 import { GrFormClose } from 'react-icons/gr';
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {setName.set || <UserSetName/>}
+      {setName.set || <Initial/>}
       <button onClick={handleShowSetName}>Mudar Nome</button>
 
       {showModalList.active && <AddList/>}
