@@ -8,11 +8,14 @@ const initialState: ListProps[] = [{
   priority: '',
   color: '',
   products: [
-    {title: '',
-    amount: 0,
-    category: '',
-    index: 0,
-    collected: false,}
+    {
+      title: '',
+      amount: 0,
+      category: '',
+      index: 0,
+      collected: false,
+      options: false
+    }
   ],
 }];
 
@@ -25,11 +28,15 @@ const listSlice = createSlice({
         title: payload.title,
         priority: payload.priority,
         color: payload.color,
-        products: [{title: '',
-        amount: 0,
-        category: '',
-        index: 0,
-        collected: false}],
+        products: 
+        [{
+          title: '',
+          amount: 0,
+          category: '',
+          index: 0,
+          collected: false,
+          options: false,
+        }],
       }
       
       return [...state, newList];
@@ -65,6 +72,14 @@ const listSlice = createSlice({
 
       return state;
     },
+    openOptions: (state, { payload }: PayloadAction<number[]>) => {
+      const optionsIndex = state[payload[0] + 1].products[payload[1] + 1].options;
+
+      const { products } = state[payload[0] + 1];
+      products[payload[1] + 1].options = !optionsIndex;
+
+      return state;
+    },
   }
 });
 
@@ -75,5 +90,6 @@ export const { addingProduct } = listSlice.actions;
 export const { collectedCheck } = listSlice.actions;
 export const { collectedUnChecks } = listSlice.actions;
 export const { removeProduct } = listSlice.actions;
+export const { openOptions } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;

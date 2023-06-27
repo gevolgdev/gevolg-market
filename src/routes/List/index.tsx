@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
-import { BiTrash } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
-import { AddingProduct, ButtonBack, DeleteContainer, ListDetails } from '../../components/List';
+import { AddingProduct, ButtonBack, DeleteContainer, ListStatus, Options } from '../../components/List';
 import useProduct from '../../hooks/useProduct';
-// import orderProducts from '../../utils/orderProducts'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import { ListProps } from '../../types/types';
@@ -26,7 +24,6 @@ const List: React.FC = () => {
     setOpenAddProduct, 
     collected, 
     unchecks,
-    removeProductList,
   } = useProduct(index);
 
   // const { order } = orderProducts();
@@ -73,9 +70,7 @@ const List: React.FC = () => {
           </div>
         </Content>
 
-        <ListDetails
-          products={products}
-        />
+        <ListStatus products={products}/>
 
         <ProductsItens>
           { products.map((item, i) => (
@@ -86,9 +81,9 @@ const List: React.FC = () => {
                 </button>
                 <h1>( {item.amount === 0 ? '1' : item.amount} ) {item.title} - <span>{item.category}</span></h1>
               </div>
-              <button onClick={() => removeProductList(index, i)} className='delete'>
-                <BiTrash/>
-              </button>
+
+              <Options collected={item.collected} indexPage={index} indexEl={i} option={item.options}/>
+              
             </Product>
           ))}
         </ProductsItens>

@@ -86,11 +86,13 @@ export const ProductsItens = styled.section`
 `;
 
 export const Product = styled.div<ProductProps>`
+  position: relative;
   width: 100%;
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: .5rem;
   align-items: center;
   border-radius: 7px;
   background: ${({collected}) => collected ? '#DCFFEF' : '#EDEDED'};
@@ -121,18 +123,6 @@ export const Product = styled.div<ProductProps>`
     span {
       opacity: 70%;
     }
-  }
-
-  .delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    color: #dc2626;
-    margin-left: 1rem;
   }
 `;
 
