@@ -23,4 +23,5 @@ export interface ProductListProps {
   category: string;
   index: number;
   collected: boolean;
+  options: boolean;
 };

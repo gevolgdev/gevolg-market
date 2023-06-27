@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { EventProps, ProductListProps } from '../types/types';
 import { useDispatch } from 'react-redux';
-import { addingProduct, collectedCheck, collectedUnChecks, removeProduct } from '../lib/redux/slices/listsSlice';
+import { addingProduct, collectedCheck, collectedUnChecks, openOptions, removeProduct } from '../lib/redux/slices/listsSlice';
 
 // interface AddProductListProps {
 //   addProduct: () => void;
@@ -13,7 +13,7 @@ import { addingProduct, collectedCheck, collectedUnChecks, removeProduct } from 
 const useProduct = (index: number) => {
 
   const INITIAL_VALUE: ProductListProps = 
-    { title: '', amount: 0, category: '', index: index, collected: false }
+    { title: '', amount: 0, category: '', index: index, collected: false, options: false }
   ;
   const [product, setProduct] = useState<ProductListProps>(INITIAL_VALUE);
   const [openAddProduct, setOpenAddProduct] = useState<boolean>(false);
@@ -40,6 +40,10 @@ const useProduct = (index: number) => {
     Dispatch(removeProduct([indexMain, indexChild]));
   };
 
+  const options = (indexOption: number) => {
+    Dispatch(openOptions([index, indexOption]));
+  };
+
   return { 
     addProduct, 
     openAddProduct, 
@@ -48,6 +52,7 @@ const useProduct = (index: number) => {
     collected, 
     unchecks,
     removeProductList,
+    options,
   };
 };
 
