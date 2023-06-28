@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
-import { BsCheck } from 'react-icons/bs';
 import Logo from '../../assets/logo-light.svg';
-import { Container, Header, Content, ProductsItens, Buttons, Product } from './style';
+import { Container, Header, Content, ProductsItens, Buttons } from './style';
 import { AddingProduct, ButtonBack, DeleteContainer, ListStatus, Options } from '../../components/List';
 import useProduct from '../../hooks/useProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import { ListProps } from '../../types/types';
+import ArchiveProducts from '../../components/List/ArchiveProducts';
+import ProductCard from '../../components/List/ProductCard';
 
 const List: React.FC = () => {
 
@@ -17,12 +18,12 @@ const List: React.FC = () => {
   const {color, priority, index, title} = newCurrentPage;
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
+  const [openArchive, setOpenArchive] = useState<boolean>(false);
   const Dispatch = useDispatch();
 
   const { 
     openAddProduct, 
-    setOpenAddProduct, 
-    collected, 
+    setOpenAddProduct,
     unchecks,
   } = useProduct(index);
 
@@ -73,25 +74,18 @@ const List: React.FC = () => {
         <ListStatus products={products}/>
 
         <ProductsItens>
-          { products.map((item, i) => (
-            <Product collected={item.collected} key={item.title}>
-              <div>
-                <button className='checkbox' onClick={ () => collected(i) }>
-                  {item.collected && <BsCheck/>}
-                </button>
-                <h1>( {item.amount === 0 ? '1' : item.amount} ) {item.title} - <span>{item.category}</span></h1>
-              </div>
-
-              <Options collected={item.collected} indexPage={index} indexEl={i} option={item.options}/>
-              
-            </Product>
-          ))}
+          { products.map((item, i) => 
+            item.archive ||
+            <ProductCard {...item} index={index} i={i} isCollected={item.collected}/>
+          )}
         </ProductsItens>
 
-        <Buttons>
-          {/* <button className="manager">Gerenciar</button> */}
+        { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
+
+        {openArchive || <Buttons>
+          <button onClick={() => setOpenArchive(true)} className="archive">Arquivados</button>
           <button onClick={() => setOpenAddProduct(true)} className="add">Adicionar</button>
-        </Buttons>
+        </Buttons>}
 
       </Container>
       
