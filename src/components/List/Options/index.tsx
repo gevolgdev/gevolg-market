@@ -15,12 +15,12 @@ interface OptionsProps {
 
 const Options: React.FC<OptionsProps> = ({ indexPage, indexEl, option, collected}) => {
 
-  const { options, removeProductList } = useProduct(indexPage);
+  const { options, removeProductList, archive } = useProduct(indexPage);
   return (
     <Container collected={collected}>
       { option &&
         <div className='options'>
-          <button onClick={() => {}} className='edit'>
+          <button onClick={() => {archive(indexPage, indexEl)}} className='edit'>
             <IoFileTray/>
           </button>
 
