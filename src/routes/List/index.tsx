@@ -33,11 +33,14 @@ const List: React.FC = () => {
   
   const products = lists[index].products.slice(1);
 
+  
+  let archiveAmount: number = 0;
   let uncheckPermission: boolean = false;
   for(let i = 0; i < products.length; i++) {
     if(products[i].collected === true) {
       uncheckPermission = true;
     }
+    if(products[i].archive === true) archiveAmount++
   };
 
   return (
@@ -71,19 +74,19 @@ const List: React.FC = () => {
           </div>
         </Content>
 
-        <ListStatus products={products}/>
+        <ListStatus products={products} color={color}/>
 
         <ProductsItens>
           { products.map((item, i) => 
             item.archive ||
             <ProductCard {...item} index={index} i={i} isCollected={item.collected}/>
-          )}
+            )}
         </ProductsItens>
 
         { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
 
         {openArchive || <Buttons>
-          <button onClick={() => setOpenArchive(true)} className="archive">Arquivados</button>
+          <button onClick={() => setOpenArchive(true)} className="archive">Arquivados ({archiveAmount})</button>
           <button onClick={() => setOpenAddProduct(true)} className="add">Adicionar</button>
         </Buttons>}
 
