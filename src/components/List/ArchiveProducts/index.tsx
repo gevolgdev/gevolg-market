@@ -3,6 +3,7 @@ import { Container } from './style';
 import { ProductListProps } from '../../../types/types';
 import ProductCard from '../ProductCard';
 import { ProductsItens } from '../../../routes/List/style';
+import { IoFileTray } from 'react-icons/io5';
 
 interface ArchiveProps {
   products: ProductListProps[];
@@ -15,8 +16,8 @@ const ArchiveProducts: React.FC<ArchiveProps> = ({ products, indexPage, setOpenA
   return (
     <Container>
       <header>
-        <h1 className='title'>Arquivados</h1>
-        <button onClick={() => setOpenArchive(false)}>Voltar para listas</button>
+        <h1 className='title'><IoFileTray/> Arquivados</h1>
+        <button onClick={() => setOpenArchive(false)}>Voltar à lista</button>
       </header>
       <ProductsItens>
         {products.map((item, i) => item.archive &&

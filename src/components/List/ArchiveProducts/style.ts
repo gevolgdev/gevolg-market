@@ -16,6 +16,9 @@ export const Container = styled.div`
     margin-bottom: 2rem;
 
     .title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 2rem;
       font-weight: 500;
       color: #0E1433;
