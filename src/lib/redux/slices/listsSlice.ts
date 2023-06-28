@@ -14,7 +14,8 @@ const initialState: ListProps[] = [{
       category: '',
       index: 0,
       collected: false,
-      options: false
+      options: false,
+      archive: false,
     }
   ],
 }];
@@ -36,6 +37,7 @@ const listSlice = createSlice({
           index: 0,
           collected: false,
           options: false,
+          archive: false,
         }],
       }
       
@@ -57,6 +59,11 @@ const listSlice = createSlice({
 
       const { products } = state[payload[0] + 1];
       products[payload[1] + 1].collected = !collectedIndex;
+      products[payload[1] + 1].options = true;
+
+      if(products[payload[1] + 1].collected === false) {
+        products[payload[1] + 1].options = false;
+      };
 
       return state;
     },
