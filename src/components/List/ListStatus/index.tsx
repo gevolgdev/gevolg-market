@@ -4,36 +4,50 @@ import { Container, Detail } from './style';
 
 interface DetailsProps {
   products: ProductListProps[];
+  color: string;
 };
 
-const ListDetails: React.FC<DetailsProps> = ({ products }) => {
+interface StatusProps {
+  productAmount: number;
+  amountCollected: number;
+  missingAmount: number;
+};
 
-  let amountCollected: number = 0;
+const ListDetails: React.FC<DetailsProps> = ({ products, color }) => {
+
+  let status: StatusProps = {
+    productAmount: 0,
+    amountCollected: 0,
+    missingAmount: 0,
+  };
+
   for(let i=0; i < products.length; i++) {
-    if(products[i].collected) amountCollected++;
-  }
-  
-  let missingAmount: number = 0;
-  for(let i=0; i < products.length; i++) {
-    if(products[i].collected === false) missingAmount++;
+    if(products[i].archive === false) status.productAmount++;
+    if(products[i].collected && products[i].archive === false) status.amountCollected++;
+    if(products[i].collected === false && products[i].archive === false) status.missingAmount++;
   }
 
   return (
     <Container>
-      <Detail>
-        <span>{products.length}</span>
-        <p>Produtos</p>
+      <Detail color={color}>
+        <h3>{status.productAmount}</h3>
+        <p><span className='dot-products'>•</span> Produtos</p>
       </Detail>
 
       <Detail>
-        <span>{missingAmount}</span>
-        <p>Pendentes</p>
+        <h3>{status.missingAmount}</h3>
+        <p><span className='dot-pend'>•</span> Pendentes</p>
       </Detail>
 
       <Detail>
-        <span>{amountCollected}</span>
-        <p>Coletados</p>
+        <h3>{status.amountCollected}</h3>
+        <p><span className='dot-collect'>•</span> Coletados</p>
       </Detail>
+{/* 
+      <Detail>
+        <h3>{status.archiveAmount}</h3>
+        <p><span className='dot-archive'>•</span> Arquivados</p>
+      </Detail> */}
     </Container>
   )
 }

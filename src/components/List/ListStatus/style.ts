@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ColorProps {
+  color?: string;
+};
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -7,12 +11,12 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const Detail = styled.div`
+export const Detail = styled.div<ColorProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  span {
+  h3 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,8 +27,17 @@ export const Detail = styled.div`
     /* border: solid 2px #19191F; */
     border-radius: 100px;
     margin-bottom: 5px;
+    color: #334155;
   }
   p {
     font-size: .8rem;
+    span {
+      font-size: 1rem;
+    }
   }
+
+  .dot-products{ color: ${({ color }) => color} }
+  .dot-pend{ color: #ca8a04 }
+  .dot-collect{ color: #22c55e }
+  .dot-archive{ color: #64748b }
 `;
