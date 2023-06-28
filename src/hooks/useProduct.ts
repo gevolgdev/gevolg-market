@@ -13,7 +13,7 @@ import { addingProduct, collectedCheck, collectedUnChecks, openOptions, removePr
 const useProduct = (index: number) => {
 
   const INITIAL_VALUE: ProductListProps = 
-    { title: '', amount: 0, category: '', index: index, collected: false, options: false }
+    { title: '', amount: 0, category: '', index: index, collected: false, options: false, archive: false }
   ;
   const [product, setProduct] = useState<ProductListProps>(INITIAL_VALUE);
   const [openAddProduct, setOpenAddProduct] = useState<boolean>(false);
