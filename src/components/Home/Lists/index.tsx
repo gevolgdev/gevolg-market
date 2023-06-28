@@ -18,7 +18,7 @@ const Lists = () => {
               <span className="list-full">Listas de compras</span>
               <Content>
                 {lists.map((item, index) => (
-                  <ListCard {...item} key={index} index={index}/>
+                  <ListCard {...item} key={item.title} index={index}/>
                 )).reverse()}
               </Content>
             </>
