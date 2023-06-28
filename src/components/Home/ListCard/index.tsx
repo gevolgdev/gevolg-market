@@ -14,7 +14,7 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
   const { openList } = useCreateLists();
 
   return (
-    <Container color={color} onClick={() => openList(index)}>
+    <Container color={color} onClick={() => openList(title)}>
       <div className="header">
         <span>{priority}</span>
         <MdArrowOutward/>

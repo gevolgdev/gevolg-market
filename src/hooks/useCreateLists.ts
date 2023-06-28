@@ -27,7 +27,10 @@ const useLists = () => {
     closeModal();
   };
   
-  const openList = (index: number) => {
+  const openList = (title: string) => {
+
+    let index = lists.findIndex(item => item.title === title);
+
     const currentDataPage: ListProps = lists[index];
 
     const indexInsert = {index: index};
