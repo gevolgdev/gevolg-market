@@ -1,0 +1,29 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 1rem 1.5rem 5rem;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #0E1433;
+    }
+    button {
+      background: transparent;
+      border: none;
+    }
+  }
+
+`;
