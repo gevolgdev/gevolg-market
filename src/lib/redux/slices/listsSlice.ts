@@ -87,6 +87,13 @@ const listSlice = createSlice({
 
       return state;
     },
+    closeOptionsAllProducts: (state, { payload }: PayloadAction<number>) => {
+      for(let i = 0; i < state[payload + 1].products.length; i++) {
+        state[payload + 1].products[i].options = false;
+      };
+
+      return state;
+    },
     archiveProduct: (state, { payload }: PayloadAction<number[]>) => {
       const archiveIndex = state[payload[0] + 1].products[payload[1] + 1].archive;
 
@@ -107,5 +114,6 @@ export const { collectedUnChecks } = listSlice.actions;
 export const { removeProduct } = listSlice.actions;
 export const { openOptions } = listSlice.actions;
 export const { archiveProduct } = listSlice.actions;
+export const { closeOptionsAllProducts } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
