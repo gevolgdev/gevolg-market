@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         { searching && 
           <SearchResults>
             {resultSearch.map((item, index) => (
-              <ListCard {...item} key={index} index={index}/>
+              <ListCard {...item} key={item.title} index={index}/>
             ))}
           </SearchResults>
         }
