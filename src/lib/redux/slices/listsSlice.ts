@@ -87,6 +87,14 @@ const listSlice = createSlice({
 
       return state;
     },
+    archiveProduct: (state, { payload }: PayloadAction<number[]>) => {
+      const archiveIndex = state[payload[0] + 1].products[payload[1] + 1].archive;
+
+      const { products } = state[payload[0] + 1];
+      products[payload[1] + 1].archive = !archiveIndex;
+
+      return state;
+    },
   }
 });
 
@@ -98,5 +106,6 @@ export const { collectedCheck } = listSlice.actions;
 export const { collectedUnChecks } = listSlice.actions;
 export const { removeProduct } = listSlice.actions;
 export const { openOptions } = listSlice.actions;
+export const { archiveProduct } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
