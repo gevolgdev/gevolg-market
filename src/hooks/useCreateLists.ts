@@ -36,8 +36,7 @@ const useLists = () => {
     const indexInsert = {index: index};
     const newCurrentPage = Object.assign(indexInsert, currentDataPage);
 
-    const currentTitlePage = currentDataPage.title;
-    const path: string = currentTitlePage.split(' ').join('-');
+    const path: string = title.split(' ').join('-');
     navigate(`/listas/${path}`, { state: { newCurrentPage } });
   };
 
