@@ -24,4 +24,5 @@ export interface ProductListProps {
   index: number;
   collected: boolean;
   options: boolean;
+  archive: boolean;
 };
