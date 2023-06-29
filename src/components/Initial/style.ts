@@ -7,7 +7,6 @@ interface ImagesProps {
 export const Container = styled.div`
   position: fixed;
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
@@ -20,6 +19,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-bottom: 1rem;
     
     img {
       display: block;
@@ -39,7 +39,6 @@ export const Container = styled.div`
 
 export const Buttons = styled.div`
   width: 100%;
-  margin-top: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
