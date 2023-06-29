@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons } from './style';
-import { AddingProduct, ButtonBack, DeleteContainer, ListStatus, Options } from '../../components/List';
+import { AddingProduct, ButtonBack, DeleteContainer, ListStatus } from '../../components/List';
 import useProduct from '../../hooks/useProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
@@ -37,7 +37,7 @@ const List: React.FC = () => {
   let archiveAmount: number = 0;
   let uncheckPermission: boolean = false;
   for(let i = 0; i < products.length; i++) {
-    if(products[i].collected === true) {
+    if(products[i].collected === true && products[i].archive === false) {
       uncheckPermission = true;
     }
     if(products[i].archive === true) archiveAmount++
@@ -49,9 +49,10 @@ const List: React.FC = () => {
         index={ index } 
         setConfirmDelete={ setConfirmDelete } 
         title={ title }
-      /> }
+        /> }
 
       { openAddProduct && <AddingProduct setOpenAddProduct={setOpenAddProduct} index={index}/> }
+
 
       <Header color={ color }>
         <ButtonBack mode='light'/>
@@ -78,9 +79,8 @@ const List: React.FC = () => {
 
         <ProductsItens>
           { products.map((item, i) => 
-            item.archive ||
-            <ProductCard {...item} index={index} i={i} isCollected={item.collected}/>
-            )}
+            item.archive || <ProductCard {...item} index={index} i={i} isCollected={item.collected}/>
+            ).reverse()}
         </ProductsItens>
 
         { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
