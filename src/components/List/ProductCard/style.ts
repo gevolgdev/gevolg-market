@@ -33,6 +33,7 @@ export const Product = styled.div<ProductProps>`
     border-radius: 3px;
     background: ${({collected}) => collected ? '#51FFB0' : '#EDEDED'};
     font-size: 1rem;
+    color: #19191F;
   }
 
   h1 {

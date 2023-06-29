@@ -54,6 +54,7 @@ export const Container = styled.div`
           font-size: 0.9rem;
         }
         input, select {
+          color: #19191F;
           font-size: 1rem;
           font-family: 'Inter Tight', sans-serif;
           background: #F1F1F1;
@@ -73,6 +74,7 @@ export const Button = styled.button`
   font-family: 'Inter Tight', sans-serif;
   font-weight: bold;
   font-size: 1rem;
+  color: #19191F;
   border-radius: 10px;
   background: #51FFB0;
   border: none;

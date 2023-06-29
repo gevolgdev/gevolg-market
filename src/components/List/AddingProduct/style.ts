@@ -35,6 +35,7 @@ export const Inputs = styled.div`
       border: none;
       outline: none;
       padding: 15px;
+      color: #19191F;
     }
   }         
 `;
@@ -72,6 +73,7 @@ export const Button = styled.button`
   font-family: 'Inter Tight', sans-serif;
   font-weight: bold;
   font-size: 1rem;
+  color: #19191F;
   margin: 50px auto 0;
   padding: 0.9rem;
   border-radius: 100px;

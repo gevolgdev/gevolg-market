@@ -36,6 +36,7 @@ export const InputsEdit = styled.div`
       border: none;
       outline: none;
       padding: 15px;
+      color: #19191F;
     }
   }         
 `;
@@ -77,6 +78,7 @@ export const Button = styled.button`
   padding: 0.9rem;
   border-radius: 100px;
   background: #51FFB0;
+  color: #19191F;
   border: none;
   cursor: pointer;
 `;

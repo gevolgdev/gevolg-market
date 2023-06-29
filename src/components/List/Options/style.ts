@@ -18,6 +18,7 @@ export const Container = styled.div<ProductProps>`
     background: transparent;
     border: none;
     font-size: 1.3rem;
+    color: #19191F;
   }
   
   .options {
