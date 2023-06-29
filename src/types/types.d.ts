@@ -26,3 +26,9 @@ export interface ProductListProps {
   options: boolean;
   archive: boolean;
 };
+
+export interface EditInfosProps {
+  title: string;
+  amount: number;
+  category: string;
+}
