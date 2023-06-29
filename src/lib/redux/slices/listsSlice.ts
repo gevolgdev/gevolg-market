@@ -3,6 +3,14 @@ import { ListProps, ProductListProps } from '../../../types/types';
 import { RootState } from '../reducer';
 
 
+interface EditProductProps {
+  indexMain: number;
+  indexChild: number;
+  title: string;
+  amount: number;
+  category: string;
+};
+
 const initialState: ListProps[] = [{
   title: '',
   priority: '',
@@ -69,7 +77,9 @@ const listSlice = createSlice({
     },
     collectedUnChecks: (state, { payload }: PayloadAction<number>) => {
       for(let i = 0; i < state[payload + 1].products.length; i++) {
-        state[payload + 1].products[i].collected = false;
+        if(state[payload + 1].products[i].archive === false) {
+          state[payload + 1].products[i].collected = false;
+        }
       };
 
       return state;
@@ -102,6 +112,20 @@ const listSlice = createSlice({
 
       return state;
     },
+    editProduct: (state, { payload }: PayloadAction<EditProductProps>) => {
+      const indexPage = payload.indexMain + 1;
+      const indexProduct = payload.indexChild + 1;
+    
+      state[indexPage].products[indexProduct].title = payload.title;
+      state[indexPage].products[indexProduct].amount = payload.amount;
+      state[indexPage].products[indexProduct].category = payload.category;
+
+      for(let i = 0; i < state[indexPage].products.length; i++) {
+        state[indexPage].products[i].options = false;
+      };
+
+      return state;
+    },
   }
 });
 
@@ -115,5 +139,6 @@ export const { removeProduct } = listSlice.actions;
 export const { openOptions } = listSlice.actions;
 export const { archiveProduct } = listSlice.actions;
 export const { closeOptionsAllProducts } = listSlice.actions;
+export const { editProduct } = listSlice.actions;
 
 export const SelectAddList = (state: RootState) => state;
