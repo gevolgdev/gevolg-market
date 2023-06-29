@@ -1,7 +1,16 @@
 import { ChangeEvent, useState } from 'react'
-import { EventProps, ProductListProps } from '../types/types';
+import { EditInfosProps, EventProps, ProductListProps } from '../types/types';
 import { useDispatch } from 'react-redux';
-import { addingProduct, archiveProduct, closeOptionsAllProducts, collectedCheck, collectedUnChecks, openOptions, removeProduct } from '../lib/redux/slices/listsSlice';
+import { 
+  addingProduct, 
+  archiveProduct, 
+  closeOptionsAllProducts, 
+  collectedCheck, 
+  collectedUnChecks, 
+  openOptions, 
+  removeProduct, 
+  editProduct 
+} from '../lib/redux/slices/listsSlice';
 
 // interface AddProductListProps {
 //   addProduct: () => void;
@@ -22,7 +31,6 @@ const useProduct = (index: number) => {
   const saveInfosProduct = (e: EventProps) => {
     const { id, value } = e.target;
     setProduct(prev => ({...prev, [id]: value}));
-    console.log( id, value );
   };
   
   const addProduct = () => Dispatch(addingProduct(product));
@@ -37,7 +45,6 @@ const useProduct = (index: number) => {
   };
 
   const removeProductList = (indexMain: number, indexChild: number) => {
-    console.log(indexMain, indexChild);
     Dispatch(removeProduct([indexMain, indexChild]));
   };
 
@@ -45,6 +52,17 @@ const useProduct = (index: number) => {
     console.log(indexMain, indexChild);
     Dispatch(archiveProduct([indexMain, indexChild]));
     Dispatch(openOptions([index, indexChild]));
+  };
+
+  const edit = (indexMain: number, indexChild: number, infos: EditInfosProps) => {
+    const editProductInfos = {
+      indexMain,
+      indexChild,
+      title: infos.title,
+      amount: infos.amount,
+      category: infos.category,
+    };
+    Dispatch(editProduct(editProductInfos));
   };
 
   const options = (indexOption: number) => {
@@ -62,6 +80,8 @@ const useProduct = (index: number) => {
     removeProductList,
     options,
     archive,
+    edit,
+    // saveEditInfosProduct,
   };
 };
 
