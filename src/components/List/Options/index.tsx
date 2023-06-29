@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, Dispatch } from 'react';
 import { BiTrash } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
 import { FaRegEdit } from 'react-icons/fa';
@@ -11,11 +11,13 @@ interface OptionsProps {
   indexEl: number;
   option: boolean;
   collected: boolean;
+  setOpenEdit: Dispatch<React.SetStateAction<boolean>>
 };
 
-const Options: React.FC<OptionsProps> = ({ indexPage, indexEl, option, collected}) => {
+const Options: React.FC<OptionsProps> = ({ indexPage, indexEl, option, collected, setOpenEdit }) => {
 
   const { options, removeProductList, archive } = useProduct(indexPage);
+
   return (
     <Container collected={collected}>
       { option &&
@@ -24,7 +26,7 @@ const Options: React.FC<OptionsProps> = ({ indexPage, indexEl, option, collected
             <IoFileTray/>
           </button>
 
-          <button onClick={() => {}} className='edit'>
+          <button onClick={() => setOpenEdit(true)} className='edit'>
             <FaRegEdit/>
           </button>
           
