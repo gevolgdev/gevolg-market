@@ -31,17 +31,17 @@ const ListDetails: React.FC<DetailsProps> = ({ products, color }) => {
     <Container>
       <Detail color={color}>
         <h3>{status.productAmount}</h3>
-        <p><span className='dot-products'>•</span> Produtos</p>
+        <p>Produtos</p>
       </Detail>
 
       <Detail>
         <h3>{status.missingAmount}</h3>
-        <p><span className='dot-pend'>•</span> Pendentes</p>
+        <p>Pendentes</p>
       </Detail>
 
       <Detail>
         <h3>{status.amountCollected}</h3>
-        <p><span className='dot-collect'>•</span> Coletados</p>
+        <p>Coletados</p>
       </Detail>
 {/* 
       <Detail>

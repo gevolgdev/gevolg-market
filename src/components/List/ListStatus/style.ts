@@ -15,6 +15,7 @@ export const Detail = styled.div<ColorProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #605F63;
 
   h3 {
     display: flex;
@@ -27,7 +28,6 @@ export const Detail = styled.div<ColorProps>`
     /* border: solid 2px #19191F; */
     border-radius: 100px;
     margin-bottom: 5px;
-    color: #334155;
   }
   p {
     font-size: .8rem;
