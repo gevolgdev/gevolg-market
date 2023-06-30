@@ -64,10 +64,11 @@ export const Content = styled.div`
 
       .unchecks {
         display: flex;
+        align-items: center;
+        gap: .5rem;
         border: none;
         background: transparent;
-        text-decoration: underline;
-        opacity: 80%;
+        color: #0E1433;
   }
     }
   }

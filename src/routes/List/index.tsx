@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
+import { HiCheckCircle } from 'react-icons/hi';
 import Logo from '../../assets/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons } from './style';
 import { AddingProduct, ButtonBack, DeleteContainer, ListStatus } from '../../components/List';
@@ -68,7 +69,9 @@ const List: React.FC = () => {
             <p>
               Prioridade { priority.toLowerCase() }
               {uncheckPermission && 
-                <button onClick={ () => unchecks(index) } className='unchecks'>Desmarcar tudo</button>
+                <button onClick={ () => unchecks(index) } className='unchecks'>
+                  <HiCheckCircle/> Desmarcar todos
+                </button>
               }
             </p>
             <h1><span>{index + 1}.</span> {title}</h1>
