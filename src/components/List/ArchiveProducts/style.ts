@@ -26,6 +26,7 @@ export const Container = styled.div`
     button {
       background: transparent;
       border: none;
+      color: #0E1433;
     }
   }
 
