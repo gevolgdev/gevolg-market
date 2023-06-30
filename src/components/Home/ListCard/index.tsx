@@ -8,9 +8,10 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
   title, 
   priority, 
   color, 
-  index }) => {
+  index,
+  date
+}) => {
 
-  const currentDate: string = new Date().toLocaleDateString();
   const { openList } = useCreateLists();
 
   return (
@@ -20,7 +21,7 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
         <MdArrowOutward/>
       </div>
       <h2>{index + 1}. {title}</h2>
-      <p><HiOutlineMinus/> {currentDate}</p>
+      <p><HiOutlineMinus/> {date}</p>
     </Container>
   )
 }

@@ -6,6 +6,7 @@ export interface ListProps {
   priority: string;
   title: string;
   color: string;
+  date: string;
   products: ProductListProps[];
 };  
 

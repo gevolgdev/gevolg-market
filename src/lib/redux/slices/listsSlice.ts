@@ -15,6 +15,7 @@ const initialState: ListProps[] = [{
   title: '',
   priority: '',
   color: '',
+  date: '',
   products: [
     {
       title: '',
@@ -33,10 +34,13 @@ const listSlice = createSlice({
   initialState,
   reducers: {
     addLists: (state, { payload }: PayloadAction<ListProps>): ListProps[] => {
+      const currentDate: string = new Date().toLocaleDateString();
+
       const newList: ListProps = {
         title: payload.title,
         priority: payload.priority,
         color: payload.color,
+        date: currentDate,
         products: 
         [{
           title: '',
