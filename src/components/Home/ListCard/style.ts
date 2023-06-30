@@ -5,7 +5,7 @@ interface ColorProps {
 };
 
 export const Container = styled.div<ColorProps>`
-  width: 220px;
+  width: 230px;
   height: 270px;
   display: flex;
   flex-direction: column;
@@ -35,9 +35,11 @@ export const Container = styled.div<ColorProps>`
     }
   }
   h2 {
+    width: 100%;
     font-size: 2rem;
     color: white;
     margin-top: auto;
+    word-break: break-word;
   }
   p {
     display: flex;
