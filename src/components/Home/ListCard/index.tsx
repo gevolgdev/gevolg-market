@@ -1,5 +1,5 @@
 import { MdArrowOutward } from 'react-icons/md';
-import { HiOutlineMinus } from 'react-icons/hi';
+import { BsCalendar2CheckFill } from 'react-icons/bs';
 import { ListProps } from '../../../types/types';
 import { Container } from './style';
 import useCreateLists from '../../../hooks/useCreateLists';
@@ -21,7 +21,7 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
         <MdArrowOutward/>
       </div>
       <h2>{index + 1}. {title}</h2>
-      <p><HiOutlineMinus/> {date}</p>
+      <p><BsCalendar2CheckFill/> {date}</p>
     </Container>
   )
 }
