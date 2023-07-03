@@ -7,7 +7,7 @@ export const Container = styled.section`
   justify-content: space-between;
 `;
 
-export const BoxName = styled.div`
+export const BoxName = styled.button`
   width: 35px;
   height: 35px;
   display: flex;
@@ -16,6 +16,8 @@ export const BoxName = styled.div`
   background: #51FFB0;
   border-radius: 5px;
   font-weight: bold;
+  border: none;
+  color: #0E1433;
 `;
 
 export const Cart = styled.div`
