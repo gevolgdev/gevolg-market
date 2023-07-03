@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   animation: backgroundAnime 0.1s ease  forwards;
   position: fixed;
+  left: 0;
   width: 100%;
   height: 100%;
 
@@ -20,10 +21,10 @@ export const Content = styled.div`
   flex-direction: column;
   animation: animeSide 0.1s ease 0.2s forwards;
   transform: translateX(-100%);
-  max-width: 270px;
+  max-width: 80%;
   height: 100%;
-  background: white;
-  padding: 1.5rem 1rem;
+  background: #0E1433;
+  padding: 2rem 1.5rem;
 
   
   header {
@@ -38,14 +39,14 @@ export const Content = styled.div`
     }
     button {
       font-size: 1.3rem;
-      color: #0E1433;
+      color: white;
       background: transparent;
       border: none;
     }
   }
 
   h3 {
-    color: #0E1433;
+    color: white;
     font-size: 2rem;
     font-weight: 600;
   }
@@ -64,17 +65,21 @@ export const Buttons = styled.div`
   margin-top: 3rem;
   width: 80%;
 
-  button {
+  button, a {
     display: flex;
     border: none;
     padding-bottom: 1rem;
-    border-bottom: solid 0.5px rgba(96,95,99, 0.3);
+    border-bottom: solid 0.5px rgba(96,95,99);
     background: transparent;
     font-size: 1rem;
-    color: #605F63;
+    color: #D9D9D9;
+    text-decoration: none;
   }
 
   button:last-child {
+    border-bottom: none;
+  }
+  a:last-child {
     border-bottom: none;
   }
 `;

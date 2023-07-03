@@ -5,8 +5,9 @@ import { RootState } from '../../../lib/redux/reducer';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs';
 import { showSetName } from '../../../lib/redux/slices/setNameSlice';
-import logo from '../../../assets/logo-dark.svg';
+import logo from '../../../assets/logo-light.svg';
 import UserSetName from '../../Initial/UserSetName';
+import { Link } from 'react-router-dom';
 
 interface MenuProps {
   setOpenMenu: Dispatch<SetStateAction<boolean>>
@@ -43,10 +44,10 @@ const Menu: React.FC<MenuProps> = ({ setOpenMenu }) => {
           
           <Buttons>
             <button onClick={ () => (Dispatch(showSetName(false)), setOpenMenu(false))}>Como usar o app?</button>
-            <button onClick={handleSettingName}>Trocar o nome</button>
-            <button onClick={ () => {}}>Dicas e sujestões</button>
-            <button onClick={ () => {}}>Clique me</button>
-            <button onClick={ () => {}}>FAQ</button>
+            <button onClick={handleSettingName}>Trocar meu nome</button>
+            <Link to='/dicas'>Dicas</Link>
+            {/* <button onClick={ () => {}}>Configurações</button> */}
+            <Link to='/faq'>FAQ</Link>
           </Buttons>
 
           <MyLinks>
