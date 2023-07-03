@@ -1,10 +1,14 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import { Container } from './style';
 import { useDispatch } from 'react-redux';
 import { setName, showSetName } from '../../../lib/redux/slices/setNameSlice';
 import logo from '../../../assets/logo-dark.svg';
 
-const UserSetName = () => {
+interface UserSetNameProps {
+  setOpenMenu?: Dispatch<SetStateAction<boolean>>
+};
+
+const UserSetName: React.FC<UserSetNameProps> = ({ setOpenMenu }) => {
 
   const Dispatch = useDispatch();
 
@@ -15,6 +19,7 @@ const UserSetName = () => {
 
   function handleShowSetName() {
     Dispatch(showSetName(true));
+    setOpenMenu && setOpenMenu(false);
   };
 
   return (
