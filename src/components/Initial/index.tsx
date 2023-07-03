@@ -4,15 +4,25 @@ import { Background, Container, Buttons } from "./style";
 import IMAGE_BG from '../../assets/background-initial.png';
 import LOGO from '../../assets/logo-dark.svg';
 import UserSetName from './UserSetName';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../lib/redux/reducer';
+import { showSetName } from '../../lib/redux/slices/setNameSlice';
 
 
 const Initial: React.FC = () => {
 
-  const [showSetName, setShowSetName] = useState<boolean>(false);
+  const [showSetNameState, setShowSetName] = useState<boolean>(false);
+  const name: string = useSelector((state: RootState) => state.setNameSlice.name);
+  const Dispatch = useDispatch();
+
+  function skipRoute() {
+    if(name === '') setShowSetName(true);
+    if(name) Dispatch(showSetName(true));
+  }
 
   return (
     <>
-      {showSetName && <UserSetName/>}
+      {showSetNameState && <UserSetName/>}
       <Container>
         <Background image={IMAGE_BG}/>
         <div className="infos">
@@ -21,7 +31,7 @@ const Initial: React.FC = () => {
           <p>Simplifique suas compras. Adicione, organize e compartilhe sua lista com nosso aplicativo de lista de compras.</p>
         </div>
         <Buttons>
-          <button onClick={() => setShowSetName(true)} className="skip">Pular</button>
+          <button onClick={skipRoute} className="skip">Pular</button>
           <button className="read">Ler mais</button>
         </Buttons>
       </Container>
