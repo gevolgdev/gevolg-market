@@ -1,8 +1,11 @@
-import Initial from '../components/Initial';
 import Home from './Home';
-
+import List from './List';
+import Dicas from './Dicas';
+import Faq from './FAQ';
 
 export {
-  Initial,
   Home,
+  List,
+  Dicas,
+  Faq,
 };
