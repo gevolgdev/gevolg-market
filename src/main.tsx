@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { Initial, Home } from './routes';
+import { Home, List, Dicas, Faq } from './routes';
 import { RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 // Redux
 import { Provider } from 'react-redux';
 import store from './lib/redux/store';
-import List from './routes/List';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +18,12 @@ const router = createBrowserRouter([
         element: <Home/>,
       },
       {
-        path: '/initial',
-        element: <Initial/>,
+        path: '/dicas',
+        element: <Dicas/>,
+      },
+      {
+        path: '/faq',
+        element: <Faq/>,
       },
       {
         path: '/listas/:id',
