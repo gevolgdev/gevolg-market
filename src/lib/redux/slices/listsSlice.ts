@@ -71,7 +71,7 @@ const listSlice = createSlice({
 
       const { products } = state[payload[0] + 1];
       products[payload[1] + 1].collected = !collectedIndex;
-      products[payload[1] + 1].options = true;
+      // products[payload[1] + 1].options = true;
 
       if(products[payload[1] + 1].collected === false) {
         products[payload[1] + 1].options = false;
