@@ -8,7 +8,7 @@ const PageInBuilding = () => {
   return (
     <Container>
       <span><BsGearWideConnected/></span>
-      <h1>Desculpe, essa página está em contrução, volte mais tarde!</h1>
+      <h1>Desculpe, essa página está em construção, volte mais tarde!</h1>
       <Link to='/'>Voltar para o início</Link>
     </Container>
   )
