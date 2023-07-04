@@ -6,8 +6,8 @@ export const Container = styled.div`
   position: fixed;
   left: 0;
   width: 100%;
-  height: 100%;
-  padding: 3rem 1.5rem 5rem;
+  height: 100vh;
+  padding: 2rem;
   background: white;
   z-index: 99;
   gap: 5rem;
@@ -52,7 +52,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    padding: 0.9rem;
+    padding: 1rem;
     margin-top: auto;
     border-radius: 100px;
     color: white;

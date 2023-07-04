@@ -7,32 +7,38 @@ interface ImagesProps {
 export const Container = styled.div`
   position: fixed;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 5rem;
   z-index: 98;
   background: white;
 
   .infos {
     display: flex;
-    padding: 0 1rem;
+    padding: 2rem;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     gap: 20px;
-    margin-bottom: 1rem;
+    height: 100%;
     
     img {
       display: block;
       margin: 0 auto;
     }
-    h1 {
-      text-align: center;
-      color: #0E1433; 
-    }
-    p {
-      width: 300px;
-      color: #605F63;
-      text-align: center;
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      h1 {
+        text-align: center;
+        color: #0E1433; 
+      }
+      p {
+        width: 300px;
+        color: #605F63;
+        text-align: center;
+      }
     }
   }
 `;

@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   padding: 6rem 2.5rem;
   background: rgb(84,84,84, 0.7);
-  z-index: 99;
+  z-index: 97;
 
   .content {
     width: 100%;

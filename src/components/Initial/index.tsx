@@ -27,13 +27,15 @@ const Initial: React.FC = () => {
         <Background image={IMAGE_BG}/>
         <div className="infos">
           <img src={LOGO}/>
-          <h1>Organize suas<br/> compras de maneira<br/> prática e fácil.</h1> 
-          <p>Simplifique suas compras. Adicione, organize e compartilhe sua lista com nosso aplicativo de lista de compras.</p>
+          <span>
+            <h1>Organize suas<br/> compras de maneira<br/> prática e fácil.</h1> 
+            <p>Simplifique suas compras. Adicione, organize e compartilhe sua lista com nosso aplicativo de lista de compras.</p>
+          </span>
+          <Buttons>
+            <button onClick={skipRoute} className="skip">Pular</button>
+            <button className="read">Ler mais</button>
+          </Buttons>
         </div>
-        <Buttons>
-          <button onClick={skipRoute} className="skip">Pular</button>
-          <button className="read">Ler mais</button>
-        </Buttons>
       </Container>
     </>
   );
