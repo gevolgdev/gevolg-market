@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   width: 100%;
@@ -21,6 +22,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 10rem;
 
     h1 {
       font-size: 2rem;
@@ -53,7 +55,6 @@ export const Container = styled.div`
     justify-content: center;
     font-size: 1rem;
     padding: 1rem;
-    margin-top: auto;
     border-radius: 100px;
     color: white;
     background: #9B7BFF;
