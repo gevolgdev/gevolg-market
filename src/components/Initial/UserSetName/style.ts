@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: fixed;
   left: 0;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   padding: 2rem;
   background: white;
   z-index: 99;
+  gap: 5rem;
 
   img {
     display: block;
