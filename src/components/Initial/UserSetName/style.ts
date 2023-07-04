@@ -11,7 +11,6 @@ export const Container = styled.div`
   padding: 2rem;
   background: white;
   z-index: 99;
-  gap: 5rem;
 
   img {
     display: block;
@@ -22,7 +21,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 10rem;
+    padding-bottom: 10rem;
 
     h1 {
       font-size: 2rem;
