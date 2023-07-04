@@ -20,6 +20,7 @@ const initialState: ListProps[] = [{
     {
       title: '',
       amount: 0,
+      measurements: '',
       category: '',
       index: 0,
       collected: false,
@@ -45,6 +46,7 @@ const listSlice = createSlice({
         [{
           title: '',
           amount: 0,
+          measurements: '',
           category: '',
           index: 0,
           collected: false,

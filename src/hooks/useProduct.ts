@@ -21,9 +21,16 @@ import {
 
 const useProduct = (index: number) => {
 
-  const INITIAL_VALUE: ProductListProps = 
-    { title: '', amount: 0, category: '', index: index, collected: false, options: false, archive: false }
-  ;
+  const INITIAL_VALUE: ProductListProps = {
+    title: '',
+    amount: 0,
+    measurements: '',
+    category: '',
+    index: index,
+    collected: false,
+    options: false,
+    archive: false
+  };
   const [product, setProduct] = useState<ProductListProps>(INITIAL_VALUE);
   const [openAddProduct, setOpenAddProduct] = useState<boolean>(false);
   const Dispatch = useDispatch();

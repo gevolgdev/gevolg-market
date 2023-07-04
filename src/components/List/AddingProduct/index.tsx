@@ -32,13 +32,21 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
         </div>
         <div>
           <label>Quantidade</label>
-          <input id='amount' type='number' onChange={saveInfosProduct}/>
+          <div className="amounts">
+            <input id='amount' type='number' onChange={saveInfosProduct}/>
+            <select id='measurements' onChange={saveInfosProduct} defaultValue='--'>
+              <option value='--' disabled>--</option>
+              <option value=' un'>Unidades</option>
+              <option value='g'>Gramas</option>
+              <option value='kg'>Kilogramas</option>
+            </select>
+          </div>
         </div>
         <div>
           <label>Categoria</label>
           {/* <input id='category' type='text' onChange={saveInfosProduct}/> */}
           <select onChange={saveInfosProduct} id='category' defaultValue='--'>
-            <option value='--'>--</option>
+            <option value='--' disabled>--</option>
             {dataCategories.sort().map(item => (
               <option value={item}>{item}</option>
             ))}

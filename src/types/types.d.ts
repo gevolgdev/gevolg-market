@@ -21,6 +21,7 @@ export interface DeleteProps {
 export interface ProductListProps {
   title: string;
   amount: number;
+  measurements: string;
   category: string;
   index: number;
   collected: boolean;
