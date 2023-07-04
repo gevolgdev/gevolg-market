@@ -17,9 +17,8 @@ export const Container = styled.div`
     display: flex;
     padding: 2rem;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    gap: 20px;
+    gap: 3rem;
     height: 100%;
     
     img {
