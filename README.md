@@ -6,14 +6,14 @@ Gevolg Market, uma ideia que nasceu com o intuito de facilitar e ajudar as pesso
 ### Passo a passo:
 Vamos então mostrar como você pode usar o app.
 
-#### Criar Lista
+#### ✅ Criar Lista
 Ao entrar no app, você verá um botão roxo de “Adicionar”, ali você pode configurar sua primeira lista.
 
 **Nome da lista:** Coloque aqui um nome que dará sentido à sua lista.<br/>
 **Prioridade:** Qual a importância das compras dessa lista?<br/>
 **Cor:** Adicione cores para categorizá-la ou por estética.<br/>
 
-#### Adicionar produto
+#### ✅ Adicionar produto
 Agora abra a lista e comece adicionar os produtos que você irá comprar no mercado.
 
 **Nome:** Qual o nome do produto?<br/>
@@ -21,7 +21,7 @@ Agora abra a lista e comece adicionar os produtos que você irá comprar no merc
 **Categoria/Setor:** Onde se encontra esse produto dentro do mercado?<br/>
 
 
-#### Interação
+#### ✅ Interação
 Com o produto adicionado dentro da sua lista de compras você pode começar a administrar ele. Como gerenciar:<br/>
 
 **Arquivar:** Caso você precise deste produto na lista, porém em um dia específico você não irá precisar<br/> comprar ele, você pode arquivar o produto e deixar apenas os que você irá comprar naquele dia.
