@@ -33,4 +33,12 @@ export interface EditInfosProps {
   title: string;
   amount: number;
   category: string;
+  measurements: string;
 }
+
+export interface InfosProps {
+  title: string,
+  image: string,
+  readmore: string,
+  page?: number,
+};
