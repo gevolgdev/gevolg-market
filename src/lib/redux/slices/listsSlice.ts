@@ -8,6 +8,7 @@ interface EditProductProps {
   indexChild: number;
   title: string;
   amount: number;
+  measurements: string;
   category: string;
 };
 
@@ -125,6 +126,7 @@ const listSlice = createSlice({
       state[indexPage].products[indexProduct].title = payload.title;
       state[indexPage].products[indexProduct].amount = payload.amount;
       state[indexPage].products[indexProduct].category = payload.category;
+      state[indexPage].products[indexProduct].measurements = payload.measurements;
 
       for(let i = 0; i < state[indexPage].products.length; i++) {
         state[indexPage].products[i].options = false;
