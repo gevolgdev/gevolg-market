@@ -38,7 +38,18 @@ export const InputsEdit = styled.div`
       padding: 15px;
       color: #19191F;
     }
-  }         
+  }
+  .amounts {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+
+    input, select {
+      width: 50%;
+      display: flex;
+    }
+  }           
 `;
 
 export const HeaderEdit = styled.header`

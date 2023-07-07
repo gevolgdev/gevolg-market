@@ -12,21 +12,25 @@ interface EditingProductProps {
   title: string;
   amount: number;
   category: string;
+  measurements: string;
 };
 
-const EditingProduct: React.FC<EditingProductProps> = ({ setOpenEdit, indexMain, indexChild, title, amount, category }) => {
+const EditingProduct: React.FC<EditingProductProps> = ({ setOpenEdit, indexMain, indexChild, title, amount, category, measurements }) => {
 
   const { edit } = useProduct(indexMain);
 
   const INITIAL_VALUE: EditInfosProps = 
-    { title, amount, category, }
+    { title, amount, category, measurements }
   ;
+
+  console.log(INITIAL_VALUE.measurements);
 
   const [editInfosProduct, setEditInfosProduct] = useState<EditInfosProps>(INITIAL_VALUE);
 
   const saveEditInfosProduct = (e: EventProps) => {
     const { id, value } = e.target;
     setEditInfosProduct(prev => ({...prev, [id]: value}));
+    console.log(value);
   };
   
   return (
@@ -45,13 +49,18 @@ const EditingProduct: React.FC<EditingProductProps> = ({ setOpenEdit, indexMain,
         </div>
         <div>
           <label>Quantidade</label>
-          <input id='amount' type='number' onChange={saveEditInfosProduct} value={editInfosProduct.amount}/>
+          <div className="amounts">
+            <input id='amount' type='number' onChange={saveEditInfosProduct} value={editInfosProduct.amount}/>
+            <select id='measurements' onChange={saveEditInfosProduct} value={editInfosProduct.measurements}>
+              <option value='un'>Unidades</option>
+              <option value='g'>Gramas</option>
+              <option value='kg'>Quilogramas</option>
+            </select>
+          </div>
         </div>
         <div>
           <label>Categoria</label>
-          {/* <input id='category' type='text' onChange={saveEditInfosProduct}/> */}
           <select onChange={saveEditInfosProduct} id='category' value={editInfosProduct.category}>
-            <option value='--'>--</option>
             {dataCategories.sort().map(item => (
               <option value={item}>{item}</option>
             ))}
