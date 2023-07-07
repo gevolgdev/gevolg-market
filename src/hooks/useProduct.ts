@@ -68,6 +68,7 @@ const useProduct = (index: number) => {
       title: infos.title,
       amount: infos.amount,
       category: infos.category,
+      measurements: infos.measurements,
     };
     Dispatch(editProduct(editProductInfos));
   };
@@ -88,7 +89,6 @@ const useProduct = (index: number) => {
     options,
     archive,
     edit,
-    // saveEditInfosProduct,
   };
 };
 
