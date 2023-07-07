@@ -30,13 +30,14 @@ const ProductCard = ({ isCollected, title, amount, category, measurements, optio
         title={title}
         amount={amount}
         category={category}
+        measurements={measurements}
       />}
       <Product collected={isCollected} key={title}>
         <div>
           <button className='checkbox' onClick={ () => collected(i) }>
             {isCollected && <BsCheck/>}
           </button>
-          <h1><strong>{amount === 0 ? '1' : amount}{measurements}</strong> - {title} - <span>{category}</span></h1>
+          <h1>( {amount === 0 ? '1' : amount} {measurements} ) {title} - <span>{category}</span></h1>
         </div>
 
         <Options collected={isCollected} indexPage={index} indexEl={i} option={options} setOpenEdit={setOpenEdit}/>
