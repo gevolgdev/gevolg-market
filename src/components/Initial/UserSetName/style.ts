@@ -43,7 +43,7 @@ export const Container = styled.div`
       border: none;
       outline: none;
       padding: 15px;
-      margin-top: 2rem;
+      margin: 2rem 0;
     }
   }
 
@@ -53,10 +53,17 @@ export const Container = styled.div`
     justify-content: center;
     font-size: 1rem;
     padding: 1rem;
-    border-radius: 100px;
+    border-radius: 10px;
     color: white;
     background: #9B7BFF;
     border: none;
     cursor: pointer;
+  }
+
+  @media (min-width: 800px) {
+    .content {
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
 `;

@@ -3,6 +3,7 @@ import { Container } from './style';
 import { useDispatch } from 'react-redux';
 import { setName, showSetName } from '../../../lib/redux/slices/setNameSlice';
 import logo from '../../../assets/logo-dark.svg';
+import { Wrapper } from '../../../style/GlobalStyle';
 
 interface UserSetNameProps {
   setOpenMenu?: Dispatch<SetStateAction<boolean>>
@@ -25,11 +26,11 @@ const UserSetName: React.FC<UserSetNameProps> = ({ setOpenMenu }) => {
   return (
     <Container>
       <img src={logo}/>
-      <div className='content'>
-        <h1>Qual é seu <br/> nome/apelido?</h1>
-        <input onChange={handleSetName} type='text' placeholder='Digite aqui...'/>
-      </div>
-      <button onClick={handleShowSetName}>Continuar</button>
+        <div className='content'>
+          <h1>Qual é seu <br/> nome/apelido?</h1>
+          <input onChange={handleSetName} type='text' placeholder='Digite aqui...'/>
+          <button onClick={handleShowSetName}>Continuar</button>
+        </div>
     </Container>
   )
 }
