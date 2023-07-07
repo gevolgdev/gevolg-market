@@ -8,10 +8,15 @@ export const Container = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
+  left: 0;
   display: flex;
   flex-direction: column;
   z-index: 98;
   background: white;
+
+  @media (min-width: 1128px) {
+    padding-top: 5rem;
+  }
 
   .infos {
     display: flex;
@@ -73,10 +78,14 @@ export const Buttons = styled.div`
 `;
 
 export const Background = styled.div<ImagesProps>`
-  width: 100%;
+  max-width: 1128px;
   height: 300px;
   background: ${({image}) => `url(${image}) no-repeat`};
   background-size: cover;
   background-position: center;
   margin-bottom: .5rem;
+
+  @media (min-width: 1128px) {
+    display: none;
+  }
 `; 
