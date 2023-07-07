@@ -1,7 +1,5 @@
 import React, { Dispatch } from 'react'
 import { Container, Button, Header, Inputs } from './style';
-import { Wrapper } from '../../../style/GlobalStyle';
-import Logo from '../../../assets/logo-light.svg';
 import { MdClose } from 'react-icons/md';
 import addProductList from '../../../hooks/useProduct';
 import { dataCategories } from './dataCategories';
@@ -18,7 +16,6 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
   return (
     <Container>
       <Header>
-        {/* <img src={Logo}/> */}
         <h1>Adicione um<br/> produto</h1>
         <button onClick={ () => setOpenAddProduct(false) }>
           <MdClose/>
@@ -36,9 +33,9 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
             <input id='amount' type='number' onChange={saveInfosProduct}/>
             <select id='measurements' onChange={saveInfosProduct} defaultValue='--'>
               <option value='--' disabled>--</option>
-              <option value=' un'>Unidades</option>
+              <option value='un'>Unidades</option>
               <option value='g'>Gramas</option>
-              <option value='kg'>Kilogramas</option>
+              <option value='kg'>Quilogramas</option>
             </select>
           </div>
         </div>
