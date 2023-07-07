@@ -8,6 +8,7 @@ export const Container = styled.div`
   height: 100%;
   background: white;
   padding: 1rem 1.5rem 5rem;
+  z-index: 99;
 
   header {
     display: flex;
@@ -24,9 +25,13 @@ export const Container = styled.div`
       color: #0E1433;
     }
     button {
+      display: flex;
+      align-items: center;
       background: transparent;
       border: none;
       color: #0E1433;
+      font-size: 1rem;
+      gap: 0.5rem;
     }
   }
 
