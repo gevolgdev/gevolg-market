@@ -33,7 +33,6 @@ const List: React.FC = () => {
   const lists: ListProps[] = useSelector((state: RootState) => state.listsSlice.slice(1));
   
   const products = lists[index].products.slice(1);
-
   
   let archiveAmount: number = 0;
   let uncheckPermission: boolean = false;
@@ -43,14 +42,16 @@ const List: React.FC = () => {
     }
     if(products[i].archive === true) archiveAmount++
   };
-
+  
   return (
     <>
+      { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
+      
       { confirmDelete && <DeleteContainer 
         index={ index } 
         setConfirmDelete={ setConfirmDelete } 
         title={ title }
-        /> }
+      /> }
 
       { openAddProduct && <AddingProduct setOpenAddProduct={setOpenAddProduct} index={index}/> }
 
@@ -86,7 +87,6 @@ const List: React.FC = () => {
             ).reverse()}
         </ProductsItens>
 
-        { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
 
         {openArchive || <Buttons>
           <button onClick={() => setOpenArchive(true)} className="archive">Arquivados ({archiveAmount})</button>
