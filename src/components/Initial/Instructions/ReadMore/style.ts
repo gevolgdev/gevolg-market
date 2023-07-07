@@ -16,9 +16,12 @@ export const Container = styled.div<ContainerProps>`
     color: #0E1433;
     text-align: center;
   }
-  .image-product {
+  .more-infos {
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    color: #737373;
   }
-
   .current-page {
     display: flex;
     flex-direction: row;
@@ -33,6 +36,37 @@ export const Container = styled.div<ContainerProps>`
     }
     .circle:nth-child(${({ currentPageCircle }) => currentPageCircle}) {
       background: #9B7BFF;
+    }
+  }
+  .infos {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(84,84,84, 0.7);
+    padding: 2rem;
+    
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: fit-content;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+
+      p {
+        color: #0E1433;
+        line-height: 1.5rem;
+      }
+      button {
+        background: transparent;
+        border: none;
+        color: #737373;
+        margin-top: 2rem;
+      }
     }
   }
 `;
