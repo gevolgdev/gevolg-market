@@ -8,21 +8,32 @@ export const infos: InfosProps[] = [
   {
     title: 'Ir ao mercado nunca foi tão prático!',
     image: Image01,
-    readmore: 'Gevolg Market, uma ideia que nasceu com o intuito de facilitar e ajudar as pessoas no momento em que elas estão fazendo compras no mercado. \nSendo assim, ajudar na organização das listas de compras, fornecer dicas sobre como e o que comprar, e claro, deixando tudo isso salvo no app para sempre estar usando as suas listas criadas.',
+    readmore: `O Gevolg Market é um aplicativo criado com o objetivo de 
+    facilitar e ajudar as pessoas durante suas compras no mercado. 
+    \nEle permite organizar listas de compras, oferece dicas sobre o que comprar e como comprar, e armazena todas as suas listas para uso futuro.`,
   },
   {
     title: 'Crie e configure sua lista.',
     image: Image02,
-    readmore: 'Ao entrar no app, você verá um botão roxo de “Adicionar”, clicando nele você consegue estar configurar sua primeira lista. \nNome da lista: Coloque aqui um nome que dará sentido à sua lista. \nPrioridade: Qual a importância das compras dessa lista? \nCor: Adicione cores para categorizá-la ou por estética.',
+    readmore: `Ao entrar no aplicativo, você encontrará um botão roxo chamado "Adicionar". Clique nele para criar a sua primeira lista.
+    \n• Nome da lista: Dê um nome que faça sentido para a sua lista.
+    \n• Prioridade: Defina a importância das compras dessa lista.
+    \n• Cor: Adicione cores para categorizar ou personalizar a lista.`,
   },
   {
     title: 'Adicione um produto da sua compra.',
     image: Image03,
-    readmore: 'Agora abra a lista e comece adicionar os produtos que você irá comprar no mercado. \nNome: Qual o nome do produto? \nQuantidade e referência: Quantas unidades, quilos ou gramas você precisa levar? \nCategoria/Setor: Onde se encontra esse produto dentro do mercado?',
+    readmore: `Abra a lista e comece a adicionar os produtos que você deseja comprar no mercado.
+    \n• Nome: Insira o nome do produto.
+    \n• Quantidade e referência: Indique a quantidade necessária em unidades, quilos ou gramas.
+    \n• Categoria/Setor: Especifique em qual seção do mercado o produto pode ser encontrado.`,
   },
   {
     title: 'Interaja e organize os produtos.',
     image: Image04,
-    readmore: 'Com o produto adicionado dentro da sua lista de compras você pode começar a administrar ele. \nComo gerenciar: \nArquivar: Caso você precise deste produto na lista, porém em um dia específico você não irá precisar comprar ele, você pode arquivar o produto e deixar apenas os que você irá comprar naquele dia. \nEditar: Digitou errado ou mudou de ideia? Basta editar e pronto. \nExcluir: Esse é auto-explicativo, né? rs',
+    readmore: `Com os produtos adicionados à sua lista de compras, você pode gerenciá-los da seguinte forma:
+    \n• Arquivar: Caso você precise do produto na lista, mas não precise comprá-lo em um dia específico, você pode arquivá-lo e deixar apenas os itens que você comprará naquele dia.
+    \n• Editar: Se você digitou algo errado ou mudou de ideia, basta editar o produto.
+    \n• Excluir: Use essa opção para remover um produto da lista.`,
   },
 ]
