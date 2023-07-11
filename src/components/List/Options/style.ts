@@ -29,7 +29,8 @@ export const Container = styled.div<ProductProps>`
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    background: ${({collected}) => collected ? '#DCFFEF' : '#EDEDED'};
+    backdrop-filter: blur(1px);
+    background: ${({ collected }) => collected ? 'rgba(220, 255, 239, 0.7)' : 'rgba(237, 237, 237, 0.7)'};
     gap: 1.3rem;
 
     button {
