@@ -26,7 +26,7 @@ export const Container = styled.div`
     button {
       flex: 1;
       padding: 12px 0;
-      border-radius: 100px;
+      border-radius: 15px;
       border: none;
     }
     .read {

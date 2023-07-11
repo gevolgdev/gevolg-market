@@ -99,7 +99,7 @@ export const Buttons = styled.div`
     width: 200px;
     padding: 1rem;
     border: 0;
-    border-radius: 100px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 1rem;
   }

@@ -57,7 +57,7 @@ export const Buttons = styled.div`
   button, .skip {
     width: 135px;
     padding: 12px 0;
-    border-radius: 100px;
+    border-radius: 15px;
     border: none;
   }
   .skip {
