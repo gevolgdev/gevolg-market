@@ -20,7 +20,7 @@ const ListCard: React.FC<ListProps & {index: number}> = ({
         <span>{priority}</span>
         <MdArrowOutward/>
       </div>
-      <h2>{index + 1}. {title}</h2>
+      <h2>{title}</h2>
       <p><BsCalendar2CheckFill/> {date}</p>
     </Container>
   )
