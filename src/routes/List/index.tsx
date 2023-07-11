@@ -45,7 +45,7 @@ const List: React.FC = () => {
   
   return (
     <>
-      { openArchive && <ArchiveProducts products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
+      { openArchive && <ArchiveProducts color={color} products={products} indexPage={index} setOpenArchive={setOpenArchive}/> }
       
       { confirmDelete && <DeleteContainer 
         index={ index } 
