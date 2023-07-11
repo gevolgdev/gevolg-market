@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+// interface ColorProps {
+//   color: string;
+// };
+
 export const Container = styled.div`
   position: absolute;
   top: 0;
@@ -7,14 +11,17 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   background: white;
-  padding: 1rem 1.5rem 5rem;
+  padding-bottom: 5rem;
   z-index: 99;
-
+  
   header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: ${ ({color}) => color ? color : '#9B7BFF'};
+    gap: 15px;
 
     .title {
       display: flex;
@@ -22,17 +29,29 @@ export const Container = styled.div`
       gap: 0.5rem;
       font-size: 2rem;
       font-weight: 500;
-      color: #0E1433;
+      color: white;
     }
     button {
       display: flex;
       align-items: center;
       background: transparent;
       border: none;
-      color: #0E1433;
+      color: white;
       font-size: 1rem;
-      gap: 0.5rem;
     }
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+
+    .empty {
+      display: flex;
+      color: #bebebe;
+      font-weight: 300;
+      margin: 6rem auto 0;
+    }
+  };
 
 `;
