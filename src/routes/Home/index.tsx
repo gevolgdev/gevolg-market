@@ -52,6 +52,7 @@ const Home: React.FC = () => {
         }
 
         { searching || <Lists/> }
+        
         <AddButton onClick={openModal}>
           <div>
             <MdAdd/>
