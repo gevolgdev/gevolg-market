@@ -69,13 +69,13 @@ const List: React.FC = () => {
           <div className="header">
             <p>
               Prioridade { priority.toLowerCase() }
-              {uncheckPermission && 
+              { uncheckPermission && 
                 <button onClick={ () => unchecks(index) } className='unchecks'>
                   <HiCheckCircle/> Desmarcar todos
                 </button>
               }
             </p>
-            <h1><span>{index + 1}.</span> {title}</h1>
+            <h1>{title}</h1>
           </div>
         </Content>
 
