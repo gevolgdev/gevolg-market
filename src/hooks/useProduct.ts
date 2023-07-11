@@ -56,7 +56,6 @@ const useProduct = (index: number) => {
   };
 
   const archive = (indexMain: number, indexChild: number) => {
-    console.log(indexMain, indexChild);
     Dispatch(archiveProduct([indexMain, indexChild]));
     Dispatch(openOptions([index, indexChild]));
   };
