@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ListProps, ProductListProps } from '../../../types/types';
+import { ListProps, ProductListProps } from '../../../@types/types';
 import { RootState } from '../reducer';
 
 

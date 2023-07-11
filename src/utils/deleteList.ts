@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { DeleteProps } from "../types/types";
+import { DeleteProps } from "../@types/types";
 import { removeList } from "../lib/redux/slices/listsSlice";
 import { useNavigate } from "react-router-dom";
 

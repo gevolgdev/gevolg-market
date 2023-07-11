@@ -1,6 +1,6 @@
 import { MdArrowOutward } from 'react-icons/md';
 import { BsCalendar2CheckFill } from 'react-icons/bs';
-import { ListProps } from '../../../types/types';
+import { ListProps } from '../../../@types/types';
 import { Container } from './style';
 import useCreateLists from '../../../hooks/useCreateLists';
 

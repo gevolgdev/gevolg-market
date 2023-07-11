@@ -8,7 +8,7 @@ import { AddingProduct, ButtonBack, DeleteContainer, ListStatus } from '../../co
 import useProduct from '../../hooks/useProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
-import { ListProps } from '../../types/types';
+import { ListProps } from '../../@types/types';
 import ArchiveProducts from '../../components/List/ArchiveProducts';
 import ProductCard from '../../components/List/ProductCard';
 

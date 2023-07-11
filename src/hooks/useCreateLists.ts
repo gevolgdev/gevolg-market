@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addLists } from '../lib/redux/slices/listsSlice';
-import { EventProps, ListProps } from '../types/types';
+import { EventProps, ListProps } from '../@types/types';
 import { showModal } from '../lib/redux/slices/showModalSlice';
 import { useNavigate } from 'react-router-dom';
 import { RootState } from '../lib/redux/reducer';

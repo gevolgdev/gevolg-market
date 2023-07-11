@@ -3,7 +3,7 @@ import { ContainerEdit, Button, HeaderEdit, InputsEdit } from './style';
 import { MdClose } from 'react-icons/md';
 import useProduct from '../../../hooks/useProduct';
 import { dataCategories } from './dataCategories';
-import { EditInfosProps, EventProps } from '../../../types/types';
+import { EditInfosProps, EventProps } from '../../../@types/types';
 
 interface EditingProductProps {
   indexMain: number;

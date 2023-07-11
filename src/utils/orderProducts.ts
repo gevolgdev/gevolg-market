@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductListProps } from '../types/types';
+import { ProductListProps } from '../@types/types';
 
 
 const orderProducts = () => {

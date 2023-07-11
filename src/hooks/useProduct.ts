@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react'
-import { EditInfosProps, EventProps, ProductListProps } from '../types/types';
+import { EditInfosProps, EventProps, ProductListProps } from '../@types/types';
 import { useDispatch } from 'react-redux';
 import { 
   addingProduct, 

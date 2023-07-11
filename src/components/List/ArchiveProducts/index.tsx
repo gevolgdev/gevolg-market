@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './style';
-import { ProductListProps } from '../../../types/types';
+import { ProductListProps } from '../../../@types/types';
 import ProductCard from '../ProductCard';
 import { ProductsItens } from '../../../routes/List/style';
 import { IoFileTray } from 'react-icons/io5';

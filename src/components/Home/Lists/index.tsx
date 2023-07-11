@@ -1,4 +1,4 @@
-import { ListProps } from "../../../types/types";
+import { ListProps } from "../../../@types/types";
 import { useSelector } from 'react-redux';
 import { Container, Content } from "./style";
 import { RootState } from "../../../lib/redux/reducer";

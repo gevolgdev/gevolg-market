@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { EventProps, ListProps } from '../types/types';
+import { EventProps, ListProps } from '../@types/types';
 import { RootState } from '../lib/redux/reducer';
 
 interface SystemSearchProps {

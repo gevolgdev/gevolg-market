@@ -1,6 +1,6 @@
 import React from 'react'
 import deleteList from '../../../utils/deleteList';
-import { DeleteProps } from '../../../types/types';
+import { DeleteProps } from '../../../@types/types';
 import { Container } from './style';
 
 const DeleteContainer: React.FC<DeleteProps> = ({index, setConfirmDelete, title}) => {

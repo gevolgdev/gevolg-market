@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { Container } from './style';
-import { InfosProps } from '../../../../types/types';
+import { InfosProps } from '../../../../@types/types';
 
 const ReadMore: React.FC<InfosProps> = ({ title, image, readmore, page = 0 }) => {
 

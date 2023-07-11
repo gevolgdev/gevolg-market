@@ -2,7 +2,7 @@ import Image01 from '../../../assets/imgLeadMore_1.png';
 import Image02 from '../../../assets/imgLeadMore_2.png';
 import Image03 from '../../../assets/imgLeadMore_3.png';
 import Image04 from '../../../assets/imgLeadMore_4.png';
-import { InfosProps } from '../../../types/types';
+import { InfosProps } from '../../../@types/types';
 
 export const infos: InfosProps[] = [
   {

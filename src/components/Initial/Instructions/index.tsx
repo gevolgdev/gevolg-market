@@ -3,7 +3,7 @@ import { Container } from './style'
 import ReadMore from './ReadMore';
 import LOGO from '../../../assets/logo-dark.svg';
 import { infos } from './dataInformations';
-import { InfosProps } from '../../../types/types';
+import { InfosProps } from '../../../@types/types';
 
 
 interface InstructionsProps {
