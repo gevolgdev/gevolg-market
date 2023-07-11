@@ -12,6 +12,10 @@ export const Container = styled.div<ContainerProps>`
   height: 100%;
   gap: 2rem;
 
+  .image-product {
+    width: 300px;
+  }
+
   h1 {
     color: #0E1433;
     text-align: center;
