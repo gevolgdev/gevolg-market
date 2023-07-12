@@ -15,7 +15,7 @@ const Lists = () => {
           lists.length === 0
           ? <span className="list-empty">Crie uma lista de compras</span>
           : <>
-              <span className="list-full">Listas de compras <span className="lists-amount">{lists.length}</span></span>
+              <span className="list-full">Listas de compras</span>
               <Content>
                 {lists.map((item, index) => (
                   <ListCard {...item} key={item.title} index={index}/>
