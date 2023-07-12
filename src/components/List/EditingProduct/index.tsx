@@ -60,7 +60,8 @@ const EditingProduct: React.FC<EditingProductProps> = ({ setOpenEdit, indexMain,
         </div>
         <div>
           <label>Categoria</label>
-          <select onChange={saveEditInfosProduct} id='category' value={editInfosProduct.category}>
+          <select onChange={saveEditInfosProduct} id='category' value={editInfosProduct.category || '--'}>
+            <option value='--' disabled>--</option>
             {dataCategories.sort().map(item => (
               <option value={item}>{item}</option>
             ))}
