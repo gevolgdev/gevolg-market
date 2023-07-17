@@ -25,7 +25,7 @@ const Faq = () => {
 
       <div className="faq">
         {questions.map((item, index) => (
-          <BasicAccordion key={index} title={item.title} answer={item.answer}/>
+          <BasicAccordion key={index} {...item}/>
         ))}
       </div>
     </Container>
