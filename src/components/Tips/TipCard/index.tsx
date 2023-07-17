@@ -24,6 +24,7 @@ const TipCard: React.FC<TipProps> = ({ title, subtitle, text, time }) => {
 
   return (
     <Container>
+      
       { openText && 
         <div className="text-container">
           <button className='button-ok' onClick={ () => setOpenText(false) }>
