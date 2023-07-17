@@ -12,7 +12,7 @@ export const questions = [
     answer: 'Antes de ir ao mercado, sempre é bom preparar uma lista de compras para você não perder tempo no mercado, não comprar coisas desnecessárias e também evitar esquecer algo. Além disso, no app há algumas dicas que você pode ler e melhorar sua experiência no mercado.',
   },
   {
-    title: '?',
-    answer: 'Resposta',
+    title: 'Como usar o app?',
+    answer: 'Ao entrar no menu, há uma opção onde você poderá aprender como usar o aplicativo.',
   },
 ];
