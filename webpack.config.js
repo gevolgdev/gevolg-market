@@ -1,3 +1,4 @@
+const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 
