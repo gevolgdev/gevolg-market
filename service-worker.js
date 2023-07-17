@@ -1,12 +1,12 @@
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('cache-name')
+    caches.open('gevolgmarket-app')
       .then(cache => {
         return cache.addAll([
           '/',
           '/index.html',
-          '/main.js',
-          '/app.js',
+          '/src/main.tsx',
+          '/src/app.tsx',
         ]);
       })
   );
