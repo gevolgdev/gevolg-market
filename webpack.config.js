@@ -18,7 +18,7 @@ module.exports = {
       start_url: '/',
       icons: [
         {
-          src: path.resolve('/src/assets/favicon-gevolg.svg'),
+          src: path.resolve('./src/assets/favicon-gevolg.svg'),
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets'),
         },

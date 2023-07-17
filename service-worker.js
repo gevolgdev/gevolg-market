@@ -5,8 +5,8 @@ self.addEventListener('install', event => {
         return cache.addAll([
           '/',
           '/index.html',
-          '/src/main.tsx',
-          '/src/app.tsx',
+          './src/main.tsx',
+          './src/app.tsx',
         ]);
       })
   );
