@@ -5,11 +5,11 @@ export const questions = [
   },
   {
     title: 'Quando devo usar o app?',
-    answer: 'Resposta',
+    answer: 'O aplicativo Gevolg Market é ideal ser usado em super-mercados, pois ele te ajuda a organizar e gerênciar a sua ida ao mercado.',
   },
   {
-    title: '?',
-    answer: 'Resposta',
+    title: 'Por que devo usar esse app?',
+    answer: 'Antes de ir ao mercado, sempre é bom preparar uma lista de compras para você não perder tempo no mercado, não comprar coisas desnecessárias e também evitar esquecer algo. Além disso, no app há algumas dicas que você pode ler e melhorar sua experiência no mercado.',
   },
   {
     title: '?',
