@@ -35,41 +35,43 @@ const EditingProduct: React.FC<EditingProductProps> = ({ setOpenEdit, indexMain,
   
   return (
     <ContainerEdit>
-      <HeaderEdit>
-        <h1>Edite um<br/> produto</h1>
-        <button onClick={ () => setOpenEdit(false) }>
-          <MdClose/>
-        </button>
-      </HeaderEdit>
+      <div className="content">
+        <HeaderEdit>
+          <h1>Edite um<br/> produto</h1>
+          <button onClick={ () => setOpenEdit(false) }>
+            <MdClose/>
+          </button>
+        </HeaderEdit>
 
-      <InputsEdit>
-        <div>
-          <label>Título do Produto</label>
-          <input id='title' type='text' onChange={saveEditInfosProduct} value={editInfosProduct.title}/>
-        </div>
-        <div>
-          <label>Quantidade</label>
-          <div className="amounts">
-            <input id='amount' type='number' onChange={saveEditInfosProduct} value={editInfosProduct.amount}/>
-            <select id='measurements' onChange={saveEditInfosProduct} value={editInfosProduct.measurements}>
-              <option value='un'>Unidades</option>
-              <option value='g'>Gramas</option>
-              <option value='kg'>Quilogramas</option>
+        <InputsEdit>
+          <div>
+            <label>Título do Produto</label>
+            <input id='title' type='text' onChange={saveEditInfosProduct} value={editInfosProduct.title}/>
+          </div>
+          <div>
+            <label>Quantidade</label>
+            <div className="amounts">
+              <input id='amount' type='number' onChange={saveEditInfosProduct} value={editInfosProduct.amount}/>
+              <select id='measurements' onChange={saveEditInfosProduct} value={editInfosProduct.measurements}>
+                <option value='un'>Unidades</option>
+                <option value='g'>Gramas</option>
+                <option value='kg'>Quilogramas</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label>Categoria</label>
+            <select onChange={saveEditInfosProduct} id='category' value={editInfosProduct.category || '--'}>
+              <option value='--' disabled>--</option>
+              {dataCategories.sort().map(item => (
+                <option value={item}>{item}</option>
+              ))}
             </select>
           </div>
-        </div>
-        <div>
-          <label>Categoria</label>
-          <select onChange={saveEditInfosProduct} id='category' value={editInfosProduct.category || '--'}>
-            <option value='--' disabled>--</option>
-            {dataCategories.sort().map(item => (
-              <option value={item}>{item}</option>
-            ))}
-          </select>
-        </div>
-      </InputsEdit>
+        </InputsEdit>
 
-      <Button onClick={() => (edit(indexMain, indexChild, editInfosProduct), setOpenEdit(false))}>Editar</Button>
+        <Button onClick={() => (edit(indexMain, indexChild, editInfosProduct), setOpenEdit(false))}>Editar</Button>
+      </div>
     </ContainerEdit>
   );
 };

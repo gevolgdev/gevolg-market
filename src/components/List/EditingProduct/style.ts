@@ -11,6 +11,13 @@ export const ContainerEdit = styled.section`
   padding: 3rem;
   background: #9B7BFF;
   z-index: 99;
+
+  .content {
+    @media (min-width: 800px){
+      width: 500px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const InputsEdit = styled.div`

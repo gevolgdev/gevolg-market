@@ -15,43 +15,45 @@ const AddingProduct: React.FC<AddingProductProps> = ({ setOpenAddProduct, index 
   
   return (
     <Container>
-      <Header>
-        <h1>Adicione um<br/> produto</h1>
-        <button onClick={ () => setOpenAddProduct(false) }>
-          <MdClose/>
-        </button>
-      </Header>
+      <div className="content">
+        <Header>
+          <h1>Adicione um<br/> produto</h1>
+          <button onClick={ () => setOpenAddProduct(false) }>
+            <MdClose/>
+          </button>
+        </Header>
 
-      <Inputs>
-        <div>
-          <label>Título do Produto</label>
-          <input id='title' type='text' onChange={saveInfosProduct}/>
-        </div>
-        <div>
-          <label>Quantidade</label>
-          <div className="amounts">
-            <input id='amount' type='number' onChange={saveInfosProduct}/>
-            <select id='measurements' onChange={saveInfosProduct} defaultValue='--'>
+        <Inputs>
+          <div>
+            <label>Título do Produto</label>
+            <input id='title' type='text' onChange={saveInfosProduct}/>
+          </div>
+          <div>
+            <label>Quantidade</label>
+            <div className="amounts">
+              <input id='amount' type='number' onChange={saveInfosProduct}/>
+              <select id='measurements' onChange={saveInfosProduct} defaultValue='--'>
+                <option value='--' disabled>--</option>
+                <option value='un'>Unidades</option>
+                <option value='g'>Gramas</option>
+                <option value='kg'>Quilogramas</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label>Categoria</label>
+            {/* <input id='category' type='text' onChange={saveInfosProduct}/> */}
+            <select onChange={saveInfosProduct} id='category' defaultValue='--'>
               <option value='--' disabled>--</option>
-              <option value='un'>Unidades</option>
-              <option value='g'>Gramas</option>
-              <option value='kg'>Quilogramas</option>
+              {dataCategories.sort().map(item => (
+                <option value={item}>{item}</option>
+              ))}
             </select>
           </div>
-        </div>
-        <div>
-          <label>Categoria</label>
-          {/* <input id='category' type='text' onChange={saveInfosProduct}/> */}
-          <select onChange={saveInfosProduct} id='category' defaultValue='--'>
-            <option value='--' disabled>--</option>
-            {dataCategories.sort().map(item => (
-              <option value={item}>{item}</option>
-            ))}
-          </select>
-        </div>
-      </Inputs>
+        </Inputs>
 
-      <Button onClick={() => (addProduct(), setOpenAddProduct(false))}>Adicionar</Button>
+        <Button onClick={() => (addProduct(), setOpenAddProduct(false))}>Adicionar</Button>
+      </div>
     </Container>
   );
 };

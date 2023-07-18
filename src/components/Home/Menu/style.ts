@@ -26,7 +26,11 @@ export const Content = styled.div`
   background: #0E1433;
   padding: 2rem 1.5rem;
 
-  
+  @media (min-width: 800px) {
+    max-width: 800px;
+    padding: 3rem;
+  }
+
   header {
     display: flex;
     flex-direction: row;
