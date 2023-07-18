@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import { Buttons, Container, Content, MyLinks } from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../lib/redux/reducer';
@@ -17,8 +17,16 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ setOpenMenu }) => {
 
   const [settingName, setSettingName] = useState<boolean>(false);
+  const [pwa, setPwa] = useState<boolean>(false);
   const name: string = useSelector((state: RootState) => state.setNameSlice.name);
   const Dispatch = useDispatch();
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator && window.matchMedia('(display-mode: standalone)').matches) {
+      setPwa(true);
+    } else setPwa(false);
+  }, [])
+  
   
   const links = {
     instagram: 'https://www.instagram.com/gevolgdev/',
@@ -48,7 +56,9 @@ const Menu: React.FC<MenuProps> = ({ setOpenMenu }) => {
             <button onClick={handleSettingName}>Trocar meu nome</button>
             <Link to='/dicas'>Dicas</Link>
             <Link to='/faq'>FAQ</Link>
-            <button onClick={ () => Dispatch(download(true))}>Baixar aplicativo</button>
+            {
+              pwa || <button onClick={ () => Dispatch(download(true))}>Baixar aplicativo</button>
+            }
           </Buttons>
 
           <MyLinks>
