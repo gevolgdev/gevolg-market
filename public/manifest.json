@@ -1,26 +1,26 @@
 {
   "name": "Gevolg Market",
   "short_name": "Gevolg Market",
-  "description": "Aplicativo para ornaizar e gerenciar de listas de compras.",
+  "description": "Aplicativo para organizar e gerenciar listas de compras.",
   "start_url": "https://gevolg-market.vercel.app/",
   "display": "standalone",
   "background_color": "#9B7BFF",
   "theme_color": "#9B7BFF",
   "icons": [
     {
-      "src": "/public/favicon-144.png",
+      "src": "favicon-144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/public/favicon-192.png",
+      "src": "favicon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/public/favicon-512.png",
+      "src": "favicon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
