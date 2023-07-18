@@ -5,7 +5,6 @@
   "display": "standalone",
   "background_color": "#9B7BFF",
   "theme_color": "#9B7BFF",
-  "scope": "/",
   "id": "/?source=pwa",
   "start_url": "https://gevolg-market.vercel.app/",
   "icons": [
