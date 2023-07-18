@@ -9,9 +9,9 @@
   "start_url": "https://gevolg-market.vercel.app/",
   "icons": [
     {
-      "src": "maskable.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
+      "src": "maskable.png",
+      "type": "image/png",
+      "sizes": "64x64 32x32 24x24 16x16",
       "purpose": "maskable"
     },
     {
