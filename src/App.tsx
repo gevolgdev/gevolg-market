@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { GlobalStyle, Wrapper } from './style/GlobalStyle';
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./lib/redux/reducer";
+import { download } from "./lib/redux/slices/downloadedSlice";
+import Download from "./components/Download";
 
 function App() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const downloaded: boolean = useSelector((state: RootState) => state.downloadedSlice.downloaded);
+  const Dispatch = useDispatch();
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -28,33 +34,31 @@ function App() {
     };
   }, []);
 
-  const install = () => {
+  const prompt = () => {
     console.log(deferredPrompt);
     if (deferredPrompt) {
       deferredPrompt.prompt();
 
       deferredPrompt.userChoice.then((choiceResult: any) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('O usuário aceitou a instalação');
-        } else {
-          console.log('O usuário recusou a instalação');
-        }
+        if (choiceResult.outcome === 'accepted') Dispatch(download(false));
+        else Dispatch(download(false));
 
         setDeferredPrompt(null);
       });
+    } else {
+      return;
     }
   };
-
-  const userScreen = window.innerWidth;
 
   return (
     <>
       <Wrapper>
-        <button onClick={ install }>Baixar app</button>
-        {userScreen < 800
-          ? <Outlet />
-          : <h1>Use seu celular</h1>
-        }
+        {downloaded
+        ? <Download>
+          <button className='download' onClick={ prompt }>Baixar aplicativo</button>
+          <button className='navigator' onClick={ () => Dispatch(download(false)) }>Usar no navegador</button>
+        </Download>
+        : <Outlet/>}
       </Wrapper>
 
       <GlobalStyle />
