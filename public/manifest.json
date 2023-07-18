@@ -2,7 +2,7 @@
   "name": "Gevolg Market",
   "short_name": "Gevolg Market",
   "description": "Aplicativo para ornaizar e gerenciar de listas de compras.",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#9B7BFF",
   "theme_color": "#9B7BFF",
