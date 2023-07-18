@@ -8,6 +8,7 @@ import { showSetName } from '../../../lib/redux/slices/setNameSlice';
 import logo from '../../../assets/logo-light.svg';
 import UserSetName from '../../Initial/UserSetName';
 import { Link } from 'react-router-dom';
+import { download } from '../../../lib/redux/slices/downloadedSlice';
 
 interface MenuProps {
   setOpenMenu: Dispatch<SetStateAction<boolean>>
@@ -18,7 +19,7 @@ const Menu: React.FC<MenuProps> = ({ setOpenMenu }) => {
   const [settingName, setSettingName] = useState<boolean>(false);
   const name: string = useSelector((state: RootState) => state.setNameSlice.name);
   const Dispatch = useDispatch();
-
+  
   const links = {
     instagram: 'https://www.instagram.com/gevolgdev/',
     linkedin: 'https://www.linkedin.com/in/ricardo-pinelli/',
@@ -46,8 +47,8 @@ const Menu: React.FC<MenuProps> = ({ setOpenMenu }) => {
             <button onClick={ () => (Dispatch(showSetName(false)), setOpenMenu(false))}>Como usar o app?</button>
             <button onClick={handleSettingName}>Trocar meu nome</button>
             <Link to='/dicas'>Dicas</Link>
-            {/* <button onClick={ () => {}}>Configurações</button> */}
             <Link to='/faq'>FAQ</Link>
+            <button onClick={ () => Dispatch(download(true))}>Baixar aplicativo</button>
           </Buttons>
 
           <MyLinks>

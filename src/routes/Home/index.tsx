@@ -10,7 +10,6 @@ import { RootState } from '../../lib/redux/reducer';
 import systemSearch from '../../utils/systemSearch';
 import ListCard from '../../components/Home/ListCard';
 
-
 const Home: React.FC = () => {
 
   const { openModal } = useLists();
