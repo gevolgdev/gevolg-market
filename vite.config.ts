@@ -24,8 +24,8 @@ export default defineConfig({
         short_name: "Gevolg Market",
         description: "Aplicativo para organizar e gerênciar listas de compras.",
         display: "standalone",
-        background_color: "#9B7BFF",
-        theme_color: "white",
+        background_color: "white",
+        theme_color: "#9B7BFF",
         id: "/?source=pwa",
         start_url: "https://gevolg-market.vercel.app/",
         icons: [
