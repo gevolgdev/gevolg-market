@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['/^src\/assets\/.*$/', 'favicon.svg', 'maskable.png', 'favicon-144.png', 'favicon-144.png', 'favicon-192.png', 'favicon-512.png'],
+      includeAssets: ['src/assets/*.png', 'src/assets/*.svg', 'favicon.svg', 'maskable.png', 'favicon-144.png', 'favicon-144.png', 'favicon-192.png', 'favicon-512.png'],
       manifest: {
         name: "Gevolg Market",
         short_name: "Gevolg Market",
