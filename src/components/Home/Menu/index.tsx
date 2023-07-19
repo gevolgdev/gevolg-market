@@ -5,7 +5,7 @@ import { RootState } from '../../../lib/redux/reducer';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs';
 import { showSetName } from '../../../lib/redux/slices/setNameSlice';
-import logo from '../../../assets/logo-light.svg';
+import logo from '/logo-light.svg';
 import UserSetName from '../../Initial/UserSetName';
 import { Link } from 'react-router-dom';
 import { download } from '../../../lib/redux/slices/downloadedSlice';

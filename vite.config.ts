@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa';
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +8,23 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['src/assets/', 'favicon.svg', 'maskable.png', 'favicon-144.png', 'favicon-192.png', 'favicon-512.png'],
+      includeAssets: [
+        'src/assets/background-initial.png',
+        'src/assets/imgLeadMore_1.png',
+        'src/assets/imgLeadMore_2.png',
+        'src/assets/imgLeadMore_3.png',
+        'src/assets/imgLeadMore_4.png',
+        'src/assets/favicon-gevolg.svg',
+        'src/assets/logo-dark.svg',
+        'src/assets/logo-light.svg',
+        'src/assets/logo-purple.svg',
+        'favicon.svg',
+        'maskable.png',
+        'favicon-144.png',
+        'favicon-144.png',
+        'favicon-192.png',
+        'favicon-512.png'
+      ],
       manifest: {
         name: "Gevolg Market",
         short_name: "Gevolg Market",
@@ -53,11 +69,4 @@ export default defineConfig({
       }
     }),
   ],
-  build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name]-[hash][extname]'
-      }
-    }
-  }
 })

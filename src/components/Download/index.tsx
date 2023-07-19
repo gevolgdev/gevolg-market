@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Container } from './style';
 import { Wrapper } from '../../style/GlobalStyle';
-import logo from '../../assets/logo-dark.svg';
+import logo from '/logo-dark.svg';
 
 interface DownloadProps {
   children: ReactNode;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Background, Container, Buttons } from "./style";
 import IMAGE_BG from '../../assets/background-initial.png';
-import LOGO from '../../assets/logo-dark.svg';
+import LOGO from '/logo-dark.svg';
 import UserSetName from './UserSetName';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';

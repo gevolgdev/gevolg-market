@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillDelete } from 'react-icons/ai';
 import { HiCheckCircle } from 'react-icons/hi';
-import Logo from '../../assets/logo-light.svg';
+import Logo from '/logo-light.svg';
 import { Container, Header, Content, ProductsItens, Buttons } from './style';
 import { AddingProduct, ButtonBack, DeleteContainer, ListStatus } from '../../components/List';
 import useProduct from '../../hooks/useProduct';

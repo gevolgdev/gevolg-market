@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container } from './style'
 import ReadMore from './ReadMore';
-import LOGO from '../../../assets/logo-dark.svg';
+import LOGO from '/logo-dark.svg';
 import { infos } from './dataInformations';
 import { InfosProps } from '../../../@types/types';
 

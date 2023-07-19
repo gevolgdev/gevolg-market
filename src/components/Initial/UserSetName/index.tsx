@@ -2,8 +2,7 @@ import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import { Container } from './style';
 import { useDispatch } from 'react-redux';
 import { setName, showSetName } from '../../../lib/redux/slices/setNameSlice';
-import logo from '../../../assets/logo-dark.svg';
-import { Wrapper } from '../../../style/GlobalStyle';
+import logo from '/logo-dark.svg';
 
 interface UserSetNameProps {
   setOpenMenu?: Dispatch<SetStateAction<boolean>>

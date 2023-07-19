@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper } from '../../style/GlobalStyle';
 import { Container, Content } from './style';
 import { ButtonBack } from '../../components/List';
-import logo from '../../assets/logo-dark.svg';
+import logo from '/logo-dark.svg';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../lib/redux/reducer';
 import TipCard from '../../components/Tips/TipCard';

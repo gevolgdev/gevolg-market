@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BoxName, Container, Cart } from './style';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import LOGO from '../../../assets/logo-dark.svg';
+import LOGO from '/logo-dark.svg';
 import Menu from '../Menu';
 
 interface NameProps {
