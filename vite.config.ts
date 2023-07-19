@@ -9,15 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: [
-        'src/assets/background-initial.png',
-        'src/assets/imgLeadMore_1.png',
-        'src/assets/imgLeadMore_2.png',
-        'src/assets/imgLeadMore_3.png',
-        'src/assets/imgLeadMore_4.png',
-        'src/assets/favicon-gevolg.svg',
-        'src/assets/logo-dark.svg',
-        'src/assets/logo-light.svg',
-        'src/assets/logo-purple.svg',
+        'logo-dark.svg',
+        'logo-light.svg',
+        'logo-purple.svg',
         'favicon.svg',
         'maskable.png',
         'favicon-144.png',
