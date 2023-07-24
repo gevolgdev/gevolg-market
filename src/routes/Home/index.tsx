@@ -27,8 +27,8 @@ const Home: React.FC = () => {
         <WelcomeHeader toCenterDiv={searching}>
           { searching || 
             <div className="texts">
-              <h1>Olá {setName.name},</h1>
-              <p>boas compras.</p>
+              <h1>Olá, {setName.name}</h1>
+              <p>Boas compras</p>
             </div>
           }
           <Search onClick={searching ? undefined : handleSearch}>
