@@ -45,12 +45,14 @@ export const Container = styled.div<ContainerProps>`
   .infos {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100vh;
     background: rgb(84,84,84, 0.7);
     padding: 2rem;
+
     
     .content {
       display: flex;
@@ -60,6 +62,10 @@ export const Container = styled.div<ContainerProps>`
       background: white;
       border-radius: 10px;
       padding: 2rem;
+      
+      @media(min-width: 800px) {
+        width: 600px;
+      }
 
       p {
         color: #0E1433;

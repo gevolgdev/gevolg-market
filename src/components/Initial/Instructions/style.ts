@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +21,7 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin-top: auto;
     gap: 1rem;
 
@@ -28,6 +30,10 @@ export const Container = styled.div`
       padding: 12px 0;
       border-radius: 15px;
       border: none;
+
+      @media(min-width: 800px) {
+        max-width: 137px;
+      }
     }
     .read {
       justify-content: center;

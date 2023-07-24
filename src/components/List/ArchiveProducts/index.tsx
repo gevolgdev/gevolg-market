@@ -22,8 +22,8 @@ const ArchiveProducts: React.FC<ArchiveProps> = ({ products, indexPage, setOpenA
   });
 
   return (
-    <Wrapper>
-      <Container color={color}>
+    <Container color={color}>
+      <Wrapper>
         <header>
           <button onClick={() => setOpenArchive(false)}><BsArrowLeftShort fontSize={35}/></button>
           <h1 className='title'><IoFileTray/> Arquivados</h1>
@@ -45,8 +45,8 @@ const ArchiveProducts: React.FC<ArchiveProps> = ({ products, indexPage, setOpenA
             <span className='empty'>Não há itens arquivados</span>
           }
         </div>
-      </Container>
-    </Wrapper>
+      </Wrapper>
+    </Container>
   );
 };
 
